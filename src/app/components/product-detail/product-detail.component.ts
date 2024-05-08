@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../../interface/product';
-
+import axios from 'axios';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
-  productname:string = 'Sản phẩm 1'
+  productname:string = ''
+  image:string = ''
+  price:number = 0
   product:IProduct = {
     "id": 1,
     "title": "iPhone 9",
@@ -27,7 +29,12 @@ export class ProductDetailComponent {
       "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
     ]
   }
-  onClick=()=>{
-      alert('Bạn vừa click')
+  onClick=async ()=>{
+      const {data} = await axios.post('http://localhost:3000/products',{
+        name:this.productname,
+        image:this.image,
+        price: this.price
+      })
+      console.log(data);      
   }
 }

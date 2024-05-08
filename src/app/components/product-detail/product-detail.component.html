@@ -4,11 +4,13 @@
     <span>{{product.price}}</span>
     <p>
         <input type="text" class="border-1" placeholder="Tên SP" [(ngModel)]="productname"/>
+        <input type="text" class="border-1" placeholder="Ảnh sp" [(ngModel)]="image"/>
+        <input type="number" class="border-1" placeholder="Giá SP" [(ngModel)]="price"/>
     </p>
     <p>
         Teen sp: {{productname}}
     </p>
     <p>
-        <button [ngStyle]="{backgroundColor:'green',color:'white',padding:'10px'}" type="button" (click)="onClick()">Thêm giỏ hàng</button>
+        <button [ngStyle]="{backgroundColor:'green',color:'white',padding:'10px'}" type="button" (click)="onClick()">Thêm sản phẩm</button>
     </p>
 </div>
