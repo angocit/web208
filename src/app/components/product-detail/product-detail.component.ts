@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../interface/product';
+import axios from 'axios';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,6 +8,9 @@ import { IProduct } from '../../interface/product';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
+  name:string = '';
+  image:string = ''
+  price:number=0
    product:IProduct = {
     "id": 1,
     "title": "iPhone 9",
@@ -25,5 +29,17 @@ export class ProductDetailComponent {
       "https://cdn.dummyjson.com/product-images/1/4.jpg",
       "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
     ]
+  }
+  onClick=async ()=>{
+    // alert('Clicked')
+    console.log(this.name,this.image,this.price);
+    const {data} = await axios.post('http://localhost:3000/products',
+    {
+      name:this.name,
+      image:this.image,
+      price:this.price
+    })
+    console.log(data);
+    
   }
 }

@@ -2,4 +2,13 @@
     <img src="{{product.thumbnail}}"/>
     <h3>{{product.title}}</h3>
     <span>{{product.price}}</span>
+    <p>
+        <input type="text" placeholder="name" [(ngModel)]="name"/>
+        <input type="text" placeholder="image" [(ngModel)]="image"/>
+        <input type="number" placeholder="price" [(ngModel)]="price"/>
+    </p>
+    <p>
+        Tên: {{name}}
+    </p>
+    <button type="button" class="py-1 px-6 bg-[green] text-white" (click)="onClick()">Thêm giỏ hàng</button>
 </div>
