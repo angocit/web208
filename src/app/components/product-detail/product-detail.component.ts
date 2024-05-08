@@ -7,6 +7,7 @@ import { IProduct } from '../../../interface/product';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
+  productname:string = 'Sản phẩm 1'
   product:IProduct = {
     "id": 1,
     "title": "iPhone 9",
@@ -25,5 +26,8 @@ export class ProductDetailComponent {
       "https://cdn.dummyjson.com/product-images/1/4.jpg",
       "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
     ]
+  }
+  onClick=()=>{
+      alert('Bạn vừa click')
   }
 }
