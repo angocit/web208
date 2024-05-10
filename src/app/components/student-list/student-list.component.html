@@ -1,0 +1,20 @@
+<table class="table-auto border w-full my-6">
+    <thead class="p-3 bg-[#ccc]">
+        <tr>
+            <th class="border">STT</th>
+            <th class="border">Họ tên</th>
+            <th class="border">Tuổi</th>
+            <th class="border">Địa chỉ</th>
+            <th class="border">Lớp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students;index as i">
+            <td class="border p-1">{{i+1}}</td>
+            <td class="border p-1">{{student.name}}</td>
+            <td class="border p-1">{{student.age}}</td>
+            <td class="border p-1">{{student.address}}</td>
+            <td class="border p-1">{{student.classname}}</td>
+        </tr>
+    </tbody>
+</table>
