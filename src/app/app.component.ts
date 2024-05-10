@@ -48,4 +48,7 @@ export class AppComponent {
       classname:"WD18337"
     }
   ]
+  addStudent = (data:IStudent)=>{
+    this.students.push(data);
+  }
 }

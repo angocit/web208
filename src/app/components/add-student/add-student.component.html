@@ -1,0 +1,20 @@
+<div class="w-full my-3">
+    <h3>Thêm mới sinh viên</h3>
+    <div class="w-full">
+        <label>Họ tên</label><br>
+        <input type="text" class="w-full p-1 border" placeholder="Họ tên sv" [(ngModel)]="name">
+    </div>
+    <div class="w-full">
+        <label>Tuổi</label><br>
+        <input type="number" class="w-full p-1 border" placeholder="Tuổi" [(ngModel)]="age">
+    </div>
+    <div class="w-full">
+        <label>Địa chỉ</label><br>
+        <input type="text" class="w-full p-1 border" placeholder="Địa chỉ" [(ngModel)]="address">
+    </div>
+    <div class="w-full">
+        <label>Tên lớp</label><br>
+        <input type="text" class="w-full p-1 border" placeholder="Tên lớp" [(ngModel)]="classname">
+    </div>
+    <button type="button" class="bg-gray-700 text-white p-3" (click)="onAddStudent()">Thêm mới</button>
+</div>

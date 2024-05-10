@@ -8,13 +8,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     ProductDetailComponent,
-    StudentListComponent
+    StudentListComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
