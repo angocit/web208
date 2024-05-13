@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct } from './interface/product';
+import { IProduct, IProductLite } from './interface/product';
 import { IStudent } from './interface/student';
 
 @Component({
@@ -11,6 +11,18 @@ import { IStudent } from './interface/student';
 })
 export class AppComponent {
   title = 'web208';
+  products:IProductLite[] = [
+    {
+      name:"Sản phẩm 1",
+      image:"https://img.muji.net/img/item/4550344275726_1260.jpg",
+      price:10000
+    },
+    {
+      name:"Sản phẩm 2",
+      image:"https://sunwatch.vn/image/catalog/Sunwatch/Seiko-clock/QXA638S.jpg",
+      price:20000
+    }
+  ];
   students:IStudent[]=[
     {
       name: "SV FPL 1",

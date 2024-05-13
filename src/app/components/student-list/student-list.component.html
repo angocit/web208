@@ -1,4 +1,5 @@
-<table class="table-auto my-6 w-full border border-spacing-5">
+<br><button class="border py-2 px-10" (click)="display=!display">Ẩn/hiện</button>
+<table class="table-auto my-6 w-full border border-spacing-5" *ngIf="display">
     <thead class="bg-[#EEE]">
         <tr>
             <th>STT</th>
@@ -9,12 +10,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students; index as i" class="border">
+        @for(student of students; track student;  let i = $index){
+        <tr class="border">
+        <!-- <tr *ngFor="let student of students; index as i" class="border"> -->
             <td>{{i+1}}</td>
             <td>{{student.name}}</td>
             <td>{{student.age}}</td>
             <td>{{student.address}}</td>
             <td>{{student.classname}}</td>
         </tr>
+        }
     </tbody>
 </table>

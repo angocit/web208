@@ -11,3 +11,8 @@ export interface IProduct {
     thumbnail: string;
     images: string[];
   }
+export interface IProductLite {
+  name: string;
+  image: string;
+  price: number;
+}
