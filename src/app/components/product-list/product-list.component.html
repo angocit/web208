@@ -1,0 +1,7 @@
+<div class="flex gap-[15px]">
+    @for(product of products; track product.title;let i = $index){
+    <div class="w-[calc(25%-5px)]">
+       <app-product-one [product]="product"></app-product-one>
+    </div>
+    }
+</div>

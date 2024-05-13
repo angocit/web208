@@ -1,0 +1,17 @@
+<div class="w-full my-3">
+    <h3>Thêm mới sản phẩm</h3>
+    <div class="w-full">
+        <label>Tên sản phẩm</label><br>
+        <input type="text" class="w-full p-1 border" [(ngModel)]="title">
+    </div>
+    <div class="w-full">
+        <label>Ảnh</label><br>
+        <input type="text" class="w-full p-1 border" placeholder="Địa chỉ" [(ngModel)]="thumbnail">
+    </div>
+    <div class="w-full">
+        <label>Giá</label><br>
+        <input type="number" class="w-full p-1 border" placeholder="Tuổi" [(ngModel)]="price">
+    </div>
+    <button type="button" class="bg-gray-700 text-white p-3" (click)="onAddProduct()">Thêm mới</button>
+</div>
+

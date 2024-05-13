@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct } from '../interface/product';
+import { IProduct, IProductLite } from '../interface/product';
 import { IStudent } from '../interface/student';
 
 @Component({
@@ -50,5 +50,9 @@ export class AppComponent {
   ]
   addStudent = (data:IStudent)=>{
     this.students.push(data);
+  }
+  products:IProductLite[]=[]
+  addProduct = (data:IProductLite)=>{
+    this.products.push(data);
   }
 }
