@@ -1,4 +1,4 @@
-<div class="w-full my-3">
+<div *ngIf="display; else titletemplate" class="w-full my-3">
     <h3>Thêm mới sản phẩm</h3>
     <div class="w-full">
         <label>Tên sản phẩm</label><br>
@@ -14,4 +14,8 @@
     </div>
     <button type="button" class="bg-gray-700 text-white p-3" (click)="onAddProduct()">Thêm mới</button>
 </div>
+<ng-template #titletemplate>
+    <h1 class="text-[50px]">Click vào nút thêm mới để thêm mới sản phẩm</h1>
+</ng-template>
+<button *ngIf="!display" class="my-3 bg-[green] text-white px-8 py-2" (click)="display=!display">Thêm sản phẩm</button>
 

@@ -11,6 +11,7 @@ export class AddProductComponent {
   title:string = ''
   price:number =1000
   thumbnail:string =''
+  display:boolean = false
   onAddProduct = ()=>{
     const data:IProductLite = {
       title:this.title,
