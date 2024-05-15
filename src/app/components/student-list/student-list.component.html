@@ -1,5 +1,5 @@
 <br><button class="border py-2 px-10" (click)="display=!display">Ẩn/hiện</button>
-<table class="table-auto my-6 w-full border border-spacing-5" *ngIf="display">
+<table class="table-auto my-6 w-full border border-spacing-5" *ngIf="display;else block2">
     <thead class="bg-[#EEE]">
         <tr>
             <th>STT</th>
@@ -22,3 +22,12 @@
         }
     </tbody>
 </table>
+<ng-template #block2>
+    <p>
+        Đây là block2 ds,ấ fskjafh áklfhasf
+        SF
+        SÀ ÁLFHASJFHADSLFAS
+        DSA
+        ADS FADSF
+    </p>
+</ng-template>
