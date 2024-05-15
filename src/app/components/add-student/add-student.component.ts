@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IStudent } from '../../interface/student';
 
 @Component({
   selector: 'app-add-student',
@@ -6,17 +7,26 @@ import { Component, Input } from '@angular/core';
   styleUrl: './add-student.component.css'
 })
 export class AddStudentComponent {
-  @Input() addStudent:any
+  // @Input() addStudent:any
+  @Output() addStudent = new EventEmitter<IStudent>();
   name:string=''
   age:number = 19
   address:string = ''
   classname:string = ''
   onAddStudent=()=>{
-    this.addStudent({
-      name:this.name,
-      age:this.age,
-      address:this.address,
-      classname:this.classname
-    })
+    // this.addStudent({
+    //   name:this.name,
+    //   age:this.age,
+    //   address:this.address,
+    //   classname:this.classname
+    // })
+    this.addStudent.emit(
+      {
+          name:this.name,
+          age:this.age,
+          address:this.address,
+          classname:this.classname
+        }
+    )
   }
 }
