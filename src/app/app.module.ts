@@ -9,6 +9,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { FormsModule } from '@angular/forms';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductOneComponent } from './components/product-one/product-one.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
     FooterComponent,
     ProductDetailComponent,
     StudentListComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    ProductListComponent,
+    ProductOneComponent
   ],
   imports: [
     BrowserModule,

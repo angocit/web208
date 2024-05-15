@@ -1,0 +1,14 @@
+<h1>Danh sách sản phẩm</h1>
+<button type="button" (click)="display = !display">Ẩn/Hiện</button>
+<div *ngIf="display; else block2" class="flex gap-10 my-10">
+   @for (product of products; track product) {
+      <div class="w-[25%]">
+         <app-product-one [product]="product"></app-product-one>
+      </div>
+   }
+</div>
+<ng-template #block2>
+   <div class="bg-[red] w-full h-[300px] text-white">
+         <p>Đây là block 2</p>
+   </div>
+</ng-template>

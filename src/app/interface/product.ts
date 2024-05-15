@@ -11,3 +11,4 @@ export interface IProduct {
   thumbnail: string;
   images: string[];
 }
+export type IProductLite = Pick<IProduct,'title'|'thumbnail'|'price'>;
