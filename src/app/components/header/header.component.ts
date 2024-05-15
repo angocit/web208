@@ -45,4 +45,14 @@ export class HeaderComponent {
       parent:0
       }
     ]
+    checkChildren = (id:number,menus:IMenu[])=>{
+      let check:boolean = false
+      for (let item of menus){
+          if (item.parent==id){
+            check = true;
+            break;
+          }
+      }
+      return check
+    }
 }

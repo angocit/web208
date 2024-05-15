@@ -33,6 +33,7 @@
                 @for (menu of menus; track menu.id) {
                     <li *ngIf="menu.parent==0" class="menu-item">
                       <a href="#" class="text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{menu.name}}</a>
+                      @if(checkChildren(menu.id,menus)){
                       <ul class="submenu w-[250px] bg-[#eee] border">
                           @for (submenu of menus; track submenu.id) {
                               <li *ngIf="submenu.parent==menu.id">
@@ -40,6 +41,7 @@
                               </li>
                           }
                       </ul>
+                    }
                     </li>
                 }
             </ul>
