@@ -11,6 +11,11 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductOneComponent } from './components/product-one/product-one.component';
+import { ClientComponent } from './layout/client/client.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { ProductOneComponent } from './components/product-one/product-one.compon
     StudentListComponent,
     AddStudentComponent,
     ProductListComponent,
-    ProductOneComponent
+    ProductOneComponent,
+    ClientComponent,
+    AdminComponent,
+    AboutUsComponent,
+    ContactComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
