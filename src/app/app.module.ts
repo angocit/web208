@@ -14,6 +14,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductOneComponent } from './components/product-one/product-one.component';
 import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AdminComponent } from './layout/admin/admin.component';
     ProductListComponent,
     ProductOneComponent,
     ClientComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
