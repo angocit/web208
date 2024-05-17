@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProductLite } from '../../../interface/product';
 
 @Component({
@@ -7,7 +7,9 @@ import { IProductLite } from '../../../interface/product';
   styleUrl: './add-product.component.css'
 })
 export class AddProductComponent {
-  @Input() addProduct: any
+  // @Input() addProduct: any
+  @Output() addProduct =  new EventEmitter();
+  @Output() message =  new EventEmitter();
   title:string = ''
   price:number =1000
   thumbnail:string =''
@@ -18,6 +20,9 @@ export class AddProductComponent {
       price:this.price,
       thumbnail:this.thumbnail
     }
-    this.addProduct(data)
+    this.addProduct.emit(data)
+  }
+  sendMessage = ()=>{
+    this.message.emit()
   }
 }

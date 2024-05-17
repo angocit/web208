@@ -76,4 +76,5 @@ export class AppComponent {
   addProduct = (data:IProductLite)=>{
     this.products.push(data);
   }
+  onAlert=()=>alert('sdafasdfads')
 }

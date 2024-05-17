@@ -1,9 +1,10 @@
-<app-header/>
-<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+<!-- <app-header/>
+<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"> -->
     <!-- <app-add-student [addStudent]="addStudent"></app-add-student> -->
 <!-- <app-product-detail [product]="product"></app-product-detail> -->
 <!-- <app-student-list [students]="students"></app-student-list> -->
-<app-add-product [addProduct]="addProduct"></app-add-product>
+<!-- <app-add-product (addProduct)="addProduct($event)" (message)="onAlert()"></app-add-product>
 <app-product-list [products]="products"></app-product-list>
 </div>
-<app-footer/>
+<app-footer/> -->
+<router-outlet></router-outlet>

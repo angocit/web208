@@ -7,5 +7,25 @@ import { IStudent } from '../../../interface/student';
   styleUrl: './student-list.component.css'
 })
 export class StudentListComponent {
-    @Input() students:IStudent[] = []
+    // @Input() students:IStudent[] = []
+    students:IStudent[]=[
+      {
+        name:"SV 1",
+        age:18,
+        address:"HN",
+        classname:"WD18337"
+      },
+      {
+        name:"SV 2",
+        age:19,
+        address:"TN",
+        classname:"WD18337"
+      },
+      {
+        name:"SV 3",
+        age:18,
+        address:"HY",
+        classname:"WD18337"
+      }
+    ]
 }
