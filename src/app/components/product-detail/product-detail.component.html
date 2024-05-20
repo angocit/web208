@@ -1,6 +1,13 @@
 <div class="grid grid-cols-2 gap-6 my-6">
-    <div>
-        <img src="{{product.thumbnail}}"/>
+    <div class="flex flex-col">
+        <div class="w-full h-[500px]">
+            <img src="{{product.thumbnail}}"/>
+        </div>
+        <div class="flex gap-2 w-full my-4">
+            @for(image of product.images;track image){
+                <img (mouseover)="onChangeImg(image)" class="max-w-[80px]" src="{{image}}"/>
+            }
+        </div>
     </div>
     <div>
         <h1 class="text-[36px] font-bold">{{product.title}}</h1>

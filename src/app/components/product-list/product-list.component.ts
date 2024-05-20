@@ -8,11 +8,13 @@ import { IProduct, IProductLite } from '../../../interface/product';
 })
 export class ProductListComponent {
 //  @Input() products:IProductLite[] = []
+  loading:boolean = true;
   products:IProduct[] = [];
   async ngOnInit() {
      const response = await fetch('https://dummyjson.com/products')
      const data = await response.json()
      console.log(data); 
-     this.products = data.products    
+     this.products = data.products 
+     this.loading = false;   
   }
 }

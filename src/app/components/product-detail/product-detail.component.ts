@@ -32,4 +32,7 @@ export class ProductDetailComponent {
     const response = await fetch(`https://dummyjson.com/products/${productid}`)
     this.product = await response.json()
   }
+  onChangeImg = (url:string)=>{
+    this.product.thumbnail = url
+  }
 }
