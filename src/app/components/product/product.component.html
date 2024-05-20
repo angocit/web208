@@ -1,2 +1,11 @@
 <h1>Danh sách sản phẩm</h1>
-<app-product-list [products]="products"></app-product-list>
+<!-- <app-product-list [products]="products"></app-product-list> -->
+<div class="grid grid-cols-4 gap-4">
+    <div class="item" *ngFor="let product of products">
+        <div class="product-item">
+            <a href="product/{{product.id}}"><img src="{{product.thumbnail}}"/></a>
+            <h3><a href="product/{{product.id}}">{{product.title}}</a></h3>
+            <span>{{product.price}}</span>
+        </div>
+    </div>
+</div>
