@@ -1,5 +1,5 @@
 <h1>Danh sách sản phẩm</h1>
-<div class="grid grid-cols-4 gap-6 my-6">
+<div *ngIf="!loading" class="grid grid-cols-4 gap-6 my-6">
 @for (product of products; track product) {
    <div class="product">
       <div class="product-item">
@@ -10,3 +10,4 @@
    </div>
 }
 </div>
+<span *ngIf="loading" class="loader"></span>

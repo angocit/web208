@@ -9,11 +9,12 @@ import axios from 'axios';
 })
 export class ProductListComponent {
   // @Input() products:IProductLite[] = [];
-  display:boolean = true;
+  loading:boolean = true;
   products:IProduct[] = []
   async ngOnInit() {
       const {data} = await axios.get('https://dummyjson.com/products?skip=0&limit=12')
       console.log(data); 
-      this.products = data.products     
+      this.products = data.products  
+      this.loading = false   
   }
 }
