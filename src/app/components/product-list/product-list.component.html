@@ -1,6 +1,5 @@
-<h3>Danh sách sản phẩm</h3>
-<div class="flex">
-<div class="w-[33.3333%]" *ngFor="let product of products">
+<div class="grid grid-cols-4 gap-4">
+<div class="item" *ngFor="let product of products">
     <app-product-one [product]="product"></app-product-one>
 </div>
 </div>

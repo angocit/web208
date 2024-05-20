@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './client.component.css'
 })
 export class ClientComponent {
-
+  display:string = 'ndsofjsafas'
 }

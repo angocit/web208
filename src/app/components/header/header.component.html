@@ -31,12 +31,12 @@
           <div class="hidden sm:ml-6 sm:block">
             <ul class="flex space-x-4">
                 @for(menu of menus;track menu.id){
-                 <li *ngIf="menu.parent==0" class="nav-menu"><a href="#" class="text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{menu.name}}</a>
+                 <li *ngIf="menu.parent==0" class="nav-menu"><a routerLink="{{menu.path}}" class="text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{menu.name}}</a>
                   @if (checkChildrent(menu.id,menus)){
                   <ul class="submenu-container w-[250px] bg-[#ccc]">
                     @for(submenu of menus;track submenu.id){
                         @if(submenu.parent==menu.id){
-                          <li><a href="#" class="text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{submenu.name}}</a></li>
+                          <li><a routerLink="{{submenu.path}}" class="text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{submenu.name}}</a></li>
                         }
                     }
                   </ul>

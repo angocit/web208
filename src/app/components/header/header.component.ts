@@ -11,7 +11,7 @@ export class HeaderComponent {
     {
       id:1,
       name:'Home',
-      path:'home',
+      path:'',
       parent:0
     },
     {

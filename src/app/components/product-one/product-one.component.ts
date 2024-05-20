@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {  IProductLite } from '../../interface/product';
+import {  IProduct, IProductLite } from '../../interface/product';
 
 @Component({
   selector: 'app-product-one',
@@ -7,5 +7,5 @@ import {  IProductLite } from '../../interface/product';
   styleUrl: './product-one.component.css'
 })
 export class ProductOneComponent {
-  @Input() product: IProductLite = {}as IProductLite
+  @Input() product: IProduct = {}as IProduct
 }

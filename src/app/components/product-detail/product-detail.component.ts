@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { IProduct } from '../../interface/product';
+import { ActivatedRoute } from '@angular/router';
+import axios from 'axios';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +9,20 @@ import { IProduct } from '../../interface/product';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
-  @Input() product: IProduct = {} as IProduct;
+  // constructor(private route: ActivatedRoute){}
+  route = inject(ActivatedRoute);
+  // @Input() product: IProduct = {} as IProduct;
+    product: IProduct = {} as IProduct
     name = 'ads'
    onClick = ()=>{
-      alert("Click")
+      console.log(this.route.snapshot.params['id']);
+      
+   }
+   async ngOnInit(){
+    const productid = this.route.snapshot.params['id']
+    const {data} = await axios.get(`https://dummyjson.com/products/${productid}`)
+    console.log(data);
+    this.product = data
+    
    }
 }

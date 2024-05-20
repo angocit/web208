@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
-import { IProductLite } from '../../interface/product';
+import { Component, Input, OnInit } from '@angular/core';
+import { IProduct, IProductLite } from '../../interface/product';
+import axios from 'axios';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
-export class ProductComponent {
-  products:IProductLite[] = [
-    {
-      name:"Sản phẩm 1",
-      image:"https://img.muji.net/img/item/4550344275726_1260.jpg",
-      price:10000
-    },
-    {
-      name:"Sản phẩm 2",
-      image:"https://sunwatch.vn/image/catalog/Sunwatch/Seiko-clock/QXA638S.jpg",
-      price:20000
-    }
-  ];
+export class ProductComponent implements OnInit{
+  products:IProduct[] = []
+  async ngOnInit(){
+    const {data} = await axios.get('https://dummyjson.com/products?skip=0&limit=10')
+    this.products = data.products
+    console.log(this.products);
+    // console.log('sfsdfsd')
+  }
 }
