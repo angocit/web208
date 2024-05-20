@@ -9,10 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
-  @Input() product:IProduct = {} as IProduct
-  // constructor(private route:ActivatedRoute){
-
-  // }
+  product:IProduct = {} as IProduct
   route = inject(ActivatedRoute)
   name:string = '';
   image:string = ''
@@ -26,7 +23,14 @@ export class ProductDetailComponent {
     //   image:this.image,
     //   price:this.price
     // })
-    console.log(this.route.snapshot.params['slug']);
+    console.log(this.route.snapshot.params['id']);
     
+  }
+  async ngOnInit(){
+    const productid = this.route.snapshot.params['id']
+      const {data} = await axios.get(`https://dummyjson.com/products/${productid}`)
+      // console.log(data);
+      this.product = data
+      
   }
 }

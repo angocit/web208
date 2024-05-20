@@ -11,7 +11,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
       {path:'products',component:ProductListComponent},
-      {path:'product/:slug',component:ProductDetailComponent},
+      {path:'product/:id',component:ProductDetailComponent},
       {path:'about-us',component:AboutUsComponent},
       {path:'contact',component:ContactComponent},
       {path:'**',component:Page404Component}
