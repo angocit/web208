@@ -15,8 +15,8 @@ export class StudentListComponent {
     studentform = new FormGroup({
         name: new FormControl('',[Validators.required,Validators.minLength(7)]),
         age: new FormControl(18),
-        address: new FormControl('',[Validators.required,Validators.email]),
-        classname: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{10}$')])
+        email: new FormControl('',[Validators.required,Validators.email]),
+        phone: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{10}$')])
     })
   
     students:IStudent[]=[

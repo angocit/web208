@@ -6,8 +6,14 @@
     Tên không được để trống & >7 kí tự
     </span>
     <input type="number" placeholder="tuổi" formControlName="age"/>
-    <input type="text" placeholder="Địa chỉ" formControlName="address"/>
-    <input type="text" placeholder="tên lớp" formControlName="classname"/>
+    <input type="text" placeholder="Địa chỉ Email" formControlName="email"/>
+    <span *ngIf="!studentform.controls.email.valid&&(studentform.controls.email.dirty||studentform.controls.email.touched)">
+        Email không đúng định dạng
+        </span>
+    <input type="text" placeholder="SĐT" formControlName="phone"/>
+    <span *ngIf="!studentform.controls.phone.valid&&(studentform.controls.phone.dirty||studentform.controls.phone.touched)">
+        Điện thoại không đúng định dạng
+        </span>
     <button class="bg-slate-300" type="submit" [disabled]="!studentform.valid">Thêm mới</button>
 </form>
 
