@@ -1,4 +1,12 @@
 {
-    "products":[],
-    "users":[]
+  "products": [
+    {
+      "name": "dsafasdf",
+      "image": "sadfadsf",
+      "category": "1",
+      "price": 1000,
+      "id": 1
+    }
+  ],
+  "users": []
 }

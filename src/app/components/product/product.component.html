@@ -1,11 +1,16 @@
+<form [formGroup]="producform" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+    <label>Tên sản phẩm</label>
+    <input class="p-2 border border-1" type="text" placeholder="Tên sản phẩm" formControlName="name"/>
+    <label>Ảnh sản phẩm</label>
+    <input class="p-2 border border-1" type="text" placeholder="Ảnh sản phẩm" formControlName="image"/>
+    <label>Chọn danh mục</label>
+    <select class="p-2 border border-1" formControlName="category">
+        <option value="1">Fashion</option>
+        <option value="2">Jewelry</option>
+    </select>
+    <label>Giá sản phẩm</label>
+    <input class="p-2 border border-1" type="number" formControlName = "price"/>
+    <button class="p-2 max-w-[200px] border border-1 bg-[blue] text-white" type="submit">Thêm mới sản phẩm</button>
+</form>
 <h1>Danh sách sản phẩm</h1>
 <!-- <app-product-list [products]="products"></app-product-list> -->
-<div class="grid grid-cols-4 gap-4">
-    <div class="item" *ngFor="let product of products">
-        <div class="product-item">
-            <a href="product/{{product.id}}"><img src="{{product.thumbnail}}"/></a>
-            <h3><a href="product/{{product.id}}">{{product.title}}</a></h3>
-            <span>{{product.price}}</span>
-        </div>
-    </div>
-</div>
