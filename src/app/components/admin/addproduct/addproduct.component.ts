@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addproduct',
@@ -8,10 +8,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AddproductComponent {
   productform = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('',[Validators.required,Validators.minLength(6)]),
     image: new FormControl(''),
     cat_id: new FormControl(1),
-    price: new FormControl(1000)
+    price: new FormControl(1000,Validators.min(2000))
   })
   onSubmit=() => {
     const data = this.productform.value
