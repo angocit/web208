@@ -6,6 +6,7 @@ import { HomeComponent } from './component/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { adminGuard } from './Guards/admin.guard';
 
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
@@ -13,7 +14,7 @@ const routes: Routes = [
     {path:'product',component:ProductComponent},
     {path:'product/:id',component:ProductDetailComponent}
   ]},
-  {path:'admin',component:AdminComponent}
+  {path:'admin',component:AdminComponent,canActivate:[adminGuard]}
 ];
 
 @NgModule({
