@@ -5,7 +5,7 @@
         </div>
         <div class="flex gap-2 w-full my-4">
             @for(image of product.images;track image){
-                <img (mouseover)="onChangeImg(image)" class="max-w-[80px]" src="{{image}}"/>
+                <img (mouseover)="onChangeImg(image)" class="max-w-[80px] hover:cursor-pointer" src="{{image}}"/>
             }
         </div>
     </div>

@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { IStudent } from '../../../interface/student';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import axios from 'axios';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-student-list',
@@ -8,6 +11,14 @@ import { IStudent } from '../../../interface/student';
 })
 export class StudentListComponent {
     // @Input() students:IStudent[] = []
+    constructor(public sanitizer: DomSanitizer){}
+    studentform = new FormGroup({
+        name: new FormControl('',[Validators.required,Validators.minLength(7)]),
+        age: new FormControl(18),
+        address: new FormControl('',[Validators.required,Validators.email]),
+        classname: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{10}$')])
+    })
+  
     students:IStudent[]=[
       {
         name:"SV 1",
@@ -28,4 +39,10 @@ export class StudentListComponent {
         classname:"WD18337"
       }
     ]
+    onSubmit =async ()=>{
+        // Lấy dữ liệu từ form
+        const studentdata:IStudent = this.studentform.value as IStudent
+        const {data} = await axios.post(`http://localhost:3000/students`,studentdata)
+        this.students.push(studentdata)
+    }
 }

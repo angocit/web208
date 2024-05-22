@@ -1,3 +1,16 @@
+
+<h1>THêm mới sinh viên</h1>
+<form [formGroup]="studentform" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="tên sv" formControlName="name"/>
+    <span *ngIf="!studentform.controls.name.valid&&(studentform.controls.name.dirty||studentform.controls.name.touched)">
+    Tên không được để trống & >7 kí tự
+    </span>
+    <input type="number" placeholder="tuổi" formControlName="age"/>
+    <input type="text" placeholder="Địa chỉ" formControlName="address"/>
+    <input type="text" placeholder="tên lớp" formControlName="classname"/>
+    <button class="bg-slate-300" type="submit" [disabled]="!studentform.valid">Thêm mới</button>
+</form>
+
 <table class="w-full my-6">
     <thead class="bg-[#ccc]">
         <tr>
