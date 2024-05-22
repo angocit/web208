@@ -1,0 +1,11 @@
+<h1>Thêm mới sản phẩm</h1>
+<form [formGroup]="productform" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Tên sản phẩm" formControlName="name"/>
+    <input type="text" placeholder="Ảnh sản phẩm" formControlName="image"/>
+    <select formControlName="cat_id">
+        <option value="1">Fashion</option>
+        <option value="2">Jewelry</option>
+    </select>
+    <input type="number" placeholder="Tên sản phẩm" formControlName="price"/>
+    <button type="submit">Thêm sản phẩm</button>
+</form>

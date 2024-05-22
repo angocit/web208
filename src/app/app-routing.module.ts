@@ -7,6 +7,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
+import { adminGuard } from './Guard/admin.guard';
 
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
@@ -14,9 +16,11 @@ const routes: Routes = [
       {path:'product/:id',component:ProductDetailComponent},
       {path:'about-us',component:AboutUsComponent},
       {path:'contact',component:ContactComponent},
-      {path:'**',component:Page404Component}
   ]},
-  {path:'dashboard',component:AdminComponent}
+  {path:'dashboard',component:AdminComponent,canActivate:[adminGuard], children:[
+    {path:'add-product',component:AddproductComponent},
+  ]},
+  {path:'**',component:Page404Component}
 ];
 
 @NgModule({

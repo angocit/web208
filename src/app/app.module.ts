@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -16,6 +16,7 @@ import { AdminComponent } from './layout/admin/admin.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Page404Component } from './components/page404/page404.component';
+import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { Page404Component } from './components/page404/page404.component';
     AdminComponent,
     AboutUsComponent,
     ContactComponent,
-    Page404Component
+    Page404Component,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
