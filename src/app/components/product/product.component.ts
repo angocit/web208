@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IProduct, IProductLite } from '../../interface/product';
 import axios from 'axios';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ProductComponent implements OnInit{
   producform = new FormGroup({
-      name: new FormControl(''),
+      name: new FormControl('',[Validators.required,Validators.minLength(6)]),
       image: new FormControl(''),
       category: new FormControl(''),
       price: new FormControl(1000)
@@ -23,9 +23,11 @@ export class ProductComponent implements OnInit{
     // // console.log('sfsdfsd')
   }
   async onSubmit(){
+    if (this.producform.valid) {
       console.log(this.producform.value);
       const {data} = await axios.post('http://localhost:3000/products',this.producform.value)
       console.log(data);
+    }
       
   }
 }

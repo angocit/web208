@@ -1,6 +1,7 @@
 <form [formGroup]="producform" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
     <label>Tên sản phẩm</label>
     <input class="p-2 border border-1" type="text" placeholder="Tên sản phẩm" formControlName="name"/>
+    <p *ngIf="!producform.controls.name.valid&&(producform.controls.name.dirty||producform.controls.name.touched)">Tên không được để trống</p>
     <label>Ảnh sản phẩm</label>
     <input class="p-2 border border-1" type="text" placeholder="Ảnh sản phẩm" formControlName="image"/>
     <label>Chọn danh mục</label>
@@ -10,7 +11,7 @@
     </select>
     <label>Giá sản phẩm</label>
     <input class="p-2 border border-1" type="number" formControlName = "price"/>
-    <button class="p-2 max-w-[200px] border border-1 bg-[blue] text-white" type="submit">Thêm mới sản phẩm</button>
+    <button class="p-2 max-w-[200px] border border-1 bg-[blue] text-white" type="submit" [disabled]="!producform.valid">Thêm mới sản phẩm</button>
 </form>
 <h1>Danh sách sản phẩm</h1>
 <!-- <app-product-list [products]="products"></app-product-list> -->
