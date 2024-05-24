@@ -16,7 +16,7 @@ export class StudentListComponent {
         name: new FormControl('',[Validators.required,Validators.minLength(7)]),
         age: new FormControl(18),
         email: new FormControl('',[Validators.required,Validators.email]),
-        phone: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{10}$')])
+        phone: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{9}$')])
     })
   
     students:IStudent[]=[
