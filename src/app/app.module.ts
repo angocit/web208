@@ -17,6 +17,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { Page404Component } from './components/page404/page404.component';
 import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
+import { EditproductComponent } from './components/admin/editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddproductComponent } from './components/admin/addproduct/addproduct.co
     AboutUsComponent,
     ContactComponent,
     Page404Component,
-    AddproductComponent
+    AddproductComponent,
+    EditproductComponent
   ],
   imports: [
     BrowserModule,

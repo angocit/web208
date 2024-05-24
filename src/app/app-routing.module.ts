@@ -9,6 +9,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 import { adminGuard } from './Guard/admin.guard';
+import { EditproductComponent } from './components/admin/editproduct/editproduct.component';
 
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
@@ -19,6 +20,7 @@ const routes: Routes = [
   ]},
   {path:'dashboard',component:AdminComponent,canActivate:[adminGuard], children:[
     {path:'add-product',component:AddproductComponent},
+    {path:'edit-product/:id',component:EditproductComponent},
   ]},
   {path:'**',component:Page404Component}
 ];

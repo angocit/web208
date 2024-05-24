@@ -1,5 +1,12 @@
 {
   "products": [
+    {
+      "name": "dfgdsfdsafa",
+      "image": "sdadfasdfsd",
+      "cat_id": 1,
+      "price": 1000,
+      "id": 1
+    }
   ],
-  "users":[]
+  "users": []
 }
