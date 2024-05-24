@@ -15,6 +15,7 @@ import { ProductOneComponent } from './components/product-one/product-one.compon
 import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { HomeComponent } from './components/home/home.component';
     ProductOneComponent,
     ClientComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
