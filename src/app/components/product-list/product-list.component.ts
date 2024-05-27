@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IProduct, IProductLite } from '../../interface/product';
+import { IProduct } from '../../interface/product';
 import axios from 'axios';
 
 @Component({

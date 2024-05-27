@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { Page404Component } from './components/page404/page404.component';
 import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 import { EditproductComponent } from './components/admin/editproduct/editproduct.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EditproductComponent } from './components/admin/editproduct/editproduct
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

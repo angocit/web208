@@ -10,3 +10,28 @@
     <input type="number" placeholder="Tên sản phẩm" formControlName="price"/>
     <button type="submit">Thêm sản phẩm</button>
 </form>
+<h3>Danh sách sản phẩm</h3>
+<table>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Giá tiền</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(product of products;track product.id; let i = $index){
+            <tr>
+                <td>{{i+1}}</td>
+                <td><img src="{{product.image}}"/></td>
+                <td>{{product.name}}</td>
+                <td>{{product.cat_id}}</td>
+                <td>{{product.price}}</td>
+                <td><a>Sửa</a><button>Xóa</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
