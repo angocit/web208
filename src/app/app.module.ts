@@ -15,6 +15,7 @@ import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { HomeComponent } from './component/home/home.component';
 import { ProductComponent } from './components/product/product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProductComponent } from './components/product/product.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

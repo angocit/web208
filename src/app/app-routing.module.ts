@@ -10,11 +10,12 @@ import { adminGuard } from './Guards/admin.guard';
 
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
-    {path:'',component:HomeComponent},
+    {path:'',component:HomeComponent}    
+  ]},
+  {path:'admin',component:AdminComponent,canActivate:[adminGuard],children:[
     {path:'product',component:ProductComponent},
     {path:'product/:id',component:ProductDetailComponent}
-  ]},
-  {path:'admin',component:AdminComponent,canActivate:[adminGuard]}
+  ]}
 ];
 
 @NgModule({
