@@ -3,6 +3,7 @@ import { IStudent } from '../../../interface/student';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import axios from 'axios';
 import { DomSanitizer } from '@angular/platform-browser';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -11,38 +12,24 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class StudentListComponent {
     // @Input() students:IStudent[] = []
-    constructor(public sanitizer: DomSanitizer){}
+    constructor(private studentService: StudentService){}
     studentform = new FormGroup({
         name: new FormControl('',[Validators.required,Validators.minLength(7)]),
         age: new FormControl(18),
         email: new FormControl('',[Validators.required,Validators.email]),
         phone: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{9}$')])
     })
-  
-    students:IStudent[]=[
-      {
-        name:"SV 1",
-        age:18,
-        address:"HN",
-        classname:"WD18337"
-      },
-      {
-        name:"SV 2",
-        age:19,
-        address:"TN",
-        classname:"WD18337"
-      },
-      {
-        name:"SV 3",
-        age:18,
-        address:"HY",
-        classname:"WD18337"
-      }
-    ]
-    onSubmit =async ()=>{
+    students:IStudent[]=[]
+    ngOnInit(){
+        this.studentService.Get_All_Students().subscribe(data=>{
+              console.log(data);
+             this.students = data 
+        })
+    }
+    onSubmit =()=>{
         // Lấy dữ liệu từ form
         const studentdata:IStudent = this.studentform.value as IStudent
-        const {data} = await axios.post(`http://localhost:3000/students`,studentdata)
-        this.students.push(studentdata)
+        // const {data} = await axios.post(`http://localhost:3000/students`,studentdata)
+        // this.students.push(studentdata)
     }
 }

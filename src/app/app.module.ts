@@ -16,6 +16,7 @@ import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { EditStudentComponent } from './components/edit-student/edit-student.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
