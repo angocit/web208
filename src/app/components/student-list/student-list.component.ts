@@ -4,6 +4,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import axios from 'axios';
 import { DomSanitizer } from '@angular/platform-browser';
 import { StudentService } from '../../student.service';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-student-list',
@@ -12,12 +14,12 @@ import { StudentService } from '../../student.service';
 })
 export class StudentListComponent {
     // @Input() students:IStudent[] = []
-    constructor(private studentService: StudentService){}
+    constructor(private studentService: StudentService,private messageService: MessageService){}
     studentform = new FormGroup({
         name: new FormControl('',[Validators.required,Validators.minLength(7)]),
         age: new FormControl(18),
-        email: new FormControl('',[Validators.required,Validators.email]),
-        phone: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{9}$')])
+        address: new FormControl('',[Validators.required]),
+        classname: new FormControl('',[Validators.required])
     })
     students:IStudent[]=[]
     ngOnInit(){
@@ -27,9 +29,11 @@ export class StudentListComponent {
         })
     }
     onSubmit =()=>{
-        // Lấy dữ liệu từ form
-        const studentdata:IStudent = this.studentform.value as IStudent
-        // const {data} = await axios.post(`http://localhost:3000/students`,studentdata)
-        // this.students.push(studentdata)
+        this.studentService.Add_Student(this.studentform.value as IStudent).subscribe(data=>{
+          console.log(data); 
+          // alert('Thêm thành công')
+          this.students.push(data as IStudent); 
+          this.messageService.add({ severity: 'error', summary: 'Success', detail: 'Thêm thành công' }); 
+        })
     }
 }
