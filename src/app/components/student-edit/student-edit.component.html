@@ -1,0 +1,17 @@
+<h1 class="text-[red] sm:text-[green]">Sửa sinh viên</h1>
+<form [formGroup]="studentform" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="tên sv" formControlName="name"/>
+    <span *ngIf="!studentform.controls.name.valid&&(studentform.controls.name.dirty||studentform.controls.name.touched)">
+    Tên không được để trống & >7 kí tự
+    </span>
+    <input type="number" placeholder="tuổi" formControlName="age"/>
+    <input type="text" placeholder="Địa chỉ" formControlName="address"/>
+    <span *ngIf="!studentform.controls.address.valid&&(studentform.controls.address.dirty||studentform.controls.address.touched)">
+        Địa chỉ không để trống
+        </span>
+    <input type="text" placeholder="Tên lớp" formControlName="classname"/>
+    <span *ngIf="!studentform.controls.classname.valid&&(studentform.controls.classname.dirty||studentform.controls.classname.touched)">
+        Điện thoại không đúng định dạng
+        </span>
+    <button class="bg-slate-300" type="submit" [disabled]="!studentform.valid">Cập nhật</button>
+</form>

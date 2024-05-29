@@ -1,5 +1,5 @@
 <p-toast/>
-<h1>THêm mới sinh viên</h1>
+<h1 class="text-[red] sm:text-[green]">THêm mới sinh viên</h1>
 <form [formGroup]="studentform" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="tên sv" formControlName="name"/>
     <span *ngIf="!studentform.controls.name.valid&&(studentform.controls.name.dirty||studentform.controls.name.touched)">
@@ -25,6 +25,7 @@
             <th class="p-2 border">Tuổi</th>
             <th class="p-2 border">Địa chỉ</th>
             <th class="p-2 border">Tên lớp</th>
+            <th class="p-2 border">Thao tác</th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,7 @@
             <td class="border p-2">{{student.age}}</td>
             <td class="border p-2">{{student.address}}</td>
             <td class="border p-2">{{student.classname}}</td>
+            <td class="border p-2"><a href="dashboard/students/edit/{{student.id}}">Sửa</a><button>Xóa</button></td>
         </tr>
     </tbody>
 </table>

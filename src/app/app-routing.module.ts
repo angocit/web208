@@ -7,8 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { adminGuard } from './Guard/admin.guard';
-import { EditStudentComponent } from './components/edit-student/edit-student.component';
-
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
     {path:'',component:HomeComponent},
@@ -17,7 +16,7 @@ const routes: Routes = [
   ]},
   {path:'dashboard',component:AdminComponent,canActivate:[adminGuard],children:[
     {path:'students',component:StudentListComponent},
-    {path:'students-edit/:id',component:EditStudentComponent}
+    {path:'students/edit/:id',component:StudentEditComponent}
   ]}
 ];
 

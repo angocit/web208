@@ -15,10 +15,10 @@ import { ProductOneComponent } from './components/product-one/product-one.compon
 import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
-import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,7 @@ import { MessageService } from 'primeng/api';
     ClientComponent,
     AdminComponent,
     HomeComponent,
-    EditStudentComponent
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,12 @@ export class StudentService {
   Get_All_Students = ():Observable<any>=>{
     return this.http.get(this.API_URL)
   }
+  Get_Student_By_ID =(id:string):Observable<any>=>{
+    return this.http.get(this.API_URL+'/'+id)
+  }
+  Update_Student = (id:string,data:IStudent):Observable<any>=>{
+    return this.http.put(this.API_URL+'/'+id,data)
+  }
   Add_Student = (data:IStudent)=>{
     return this.http.post(this.API_URL,data)
   }
