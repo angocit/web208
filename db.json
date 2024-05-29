@@ -1,11 +1,39 @@
 {
   "products": [
     {
-      "name": "dfgdsfdsafa",
+      "name": "Sản phẩm 1 edit",
       "image": "sdadfasdfsd",
       "cat_id": 1,
       "price": 1000,
       "id": 1
+    },
+    {
+      "name": "",
+      "image": "",
+      "cat_id": 1,
+      "price": 1000,
+      "id": 2
+    },
+    {
+      "name": "Sabr oganar 2dsfasfsdaf",
+      "image": "sadfsadfsadfads",
+      "cat_id": 1,
+      "price": 1000,
+      "id": 3
+    },
+    {
+      "name": "Sản phẩm 2",
+      "image": "https://img.muji.net/img/item/4550344275726_1260.jpg",
+      "cat_id": 1,
+      "price": 1000444,
+      "id": 4
+    },
+    {
+      "name": "",
+      "image": "",
+      "cat_id": 1,
+      "price": 1000,
+      "id": 5
     }
   ],
   "users": []

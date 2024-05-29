@@ -14,7 +14,7 @@ export class AddproductComponent {
   products:IProduct[] = []
   constructor(private productService:ProductsService){}
   productform = new FormGroup({
-    name: new FormControl('',[Validators.required,Validators.pattern('0+[0-9]{9}$')]),
+    name: new FormControl('',[Validators.required,Validators.minLength(6)]),
     image: new FormControl(''),
     cat_id: new FormControl(1),
     price: new FormControl(1000,Validators.min(2000))
@@ -28,9 +28,10 @@ export class AddproductComponent {
     })
   }
    onSubmit=async () => {
-    const productdata = this.productform.value
-    // console.log(data);
-    const {data} =await axios.post('http://localhost:3000/products',productdata);
-    console.log(data); 
+    const productdata = this.productform.value as IProduct
+    this.productService.add_Product(productdata).subscribe(data=>{
+        alert('Thêm thành công')
+        this.products.push(data)
+    })
   }
 }
