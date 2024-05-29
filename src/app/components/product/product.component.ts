@@ -18,18 +18,30 @@ export class ProductComponent implements OnInit{
       price: new FormControl(1000)
   })
   products:IProduct[] = []
-  async ngOnInit(){
+  ngOnInit(){
     this.productService.Get_All_Products().subscribe(data=>{
       this.products = data
   })
   }
-  async onSubmit(){
+  onSubmit(){
     if (this.producform.valid) {
       console.log(this.producform.value);
       this.productService.AddProduct(this.producform.value as IProduct).subscribe(data=>{
           // console.log(data);
           this.products.push(data);
       })
+    } 
+  }
+  onDelete = (productid:any)=>{
+    // console.log(productid);
+    // console.log(`slafsadfsadf`);
+    
+    if (confirm('Bạn chắc chứ?')){
+        this.productService.DeleteProduct(productid).subscribe(data=>{
+          console.log(data);
+          this.products = this.products.filter(product=>product.id!==productid)
+        });
+       
     } 
   }
 }
