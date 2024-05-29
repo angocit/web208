@@ -12,7 +12,7 @@ export class ProductService {
   Get_All_Products=():Observable<any>=>{
     return this.http.get(this.API_URL)
   }
-  Get_All_Products_By_ID=(id:string):Observable<any>=>{
+  Get_Products_By_ID=(id:string):Observable<any>=>{
     return this.http.get(this.API_URL+`/${id}`)
   }
   AddProduct=(data:IProduct):Observable<any>=>{

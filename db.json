@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "name": "dsafasdf",
-      "image": "sadfadsf",
+      "name": "dsafasdf Edit",
+      "image": "https://img.muji.net/img/item/4550344275726_1260.jpg",
       "category": "1",
-      "price": 1000,
+      "price": 1000000,
       "id": 1
     },
     {
@@ -27,6 +27,13 @@
       "category": "1",
       "price": 1000423432,
       "id": 4
+    },
+    {
+      "name": "Sản phẩm 5",
+      "image": "dsafasfdsa",
+      "category": "2",
+      "price": 200000,
+      "id": 5
     }
   ],
   "users": []

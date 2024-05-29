@@ -1,0 +1,16 @@
+<h1>Sửa sản phẩm</h1>
+<form [formGroup]="producform" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+    <label>Tên sản phẩm</label>
+    <input class="p-2 border border-1" type="text" placeholder="Tên sản phẩm" formControlName="name"/>
+    <p *ngIf="!producform.controls.name.valid&&(producform.controls.name.dirty||producform.controls.name.touched)">Tên không được để trống</p>
+    <label>Ảnh sản phẩm</label>
+    <input class="p-2 border border-1" type="text" placeholder="Ảnh sản phẩm" formControlName="image"/>
+    <label>Chọn danh mục</label>
+    <select class="p-2 border border-1" formControlName="category">
+        <option value="1">Fashion</option>
+        <option value="2">Jewelry</option>
+    </select>
+    <label>Giá sản phẩm</label>
+    <input class="p-2 border border-1" type="number" formControlName = "price"/>
+    <button class="p-2 max-w-[200px] border border-1 bg-[blue] text-white" type="submit" [disabled]="!producform.valid">Cập nhật sản phẩm</button>
+</form>
