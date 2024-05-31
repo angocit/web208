@@ -1,3 +1,5 @@
+<p-toast />
+<p-confirmDialog />
 <h1>Thêm mới sản phẩm</h1>
 <form [formGroup]="productform" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="Tên sản phẩm" formControlName="name"/>
@@ -30,7 +32,7 @@
                 <td>{{product.name}}</td>
                 <td>{{product.cat_id}}</td>
                 <td>{{product.price}}</td>
-                <td><a href="dashboard/edit-product/{{product.id}}">Sửa</a><button>Xóa</button></td>
+                <td><a href="dashboard/edit-product/{{product.id}}">Sửa</a><button (click)="onDelete(product.id,$event)">Xóa</button></td>
             </tr>
         }
     </tbody>

@@ -10,12 +10,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 import { adminGuard } from './Guard/admin.guard';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
       {path:'products',component:ProductListComponent},
       {path:'product/:id',component:ProductDetailComponent},
       {path:'about-us',component:AboutUsComponent},
       {path:'contact',component:ContactComponent},
+      {path:'register',component:RegisterComponent},
+      {path:'login',component:LoginComponent},
   ]},
   {path:'dashboard',component:AdminComponent,canActivate:[adminGuard], children:[
     {path:'add-product',component:AddproductComponent},

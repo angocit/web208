@@ -19,7 +19,12 @@ import { Page404Component } from './components/page404/page404.component';
 import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,16 +41,21 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     ContactComponent,
     Page404Component,
     AddproductComponent,
-    EditProductComponent
+    EditProductComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
-  providers: [],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,40 +1,25 @@
 {
   "products": [
     {
-      "name": "Sản phẩm 1 edit",
-      "image": "sdadfasdfsd",
-      "cat_id": 1,
-      "price": 1000,
-      "id": 1
-    },
-    {
-      "name": "",
-      "image": "",
-      "cat_id": 1,
-      "price": 1000,
-      "id": 2
-    },
-    {
-      "name": "Sabr oganar 2dsfasfsdaf",
-      "image": "sadfsadfsadfads",
-      "cat_id": 1,
-      "price": 1000,
-      "id": 3
-    },
-    {
       "name": "Sản phẩm 2",
       "image": "https://img.muji.net/img/item/4550344275726_1260.jpg",
       "cat_id": 1,
       "price": 1000444,
       "id": 4
-    },
-    {
-      "name": "",
-      "image": "",
-      "cat_id": 1,
-      "price": 1000,
-      "id": 5
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$heE/ioj5g/b2zZVL8jCd9upbJpl.rMXQUlcqB8R4fxP5C/ISPJxmq",
+      "name": "Ngọc",
+      "id": 1
+    },
+    {
+      "email": "ngocnv34@fe.edu.vn",
+      "password": "$2a$10$/WcOiq/C8.tX7hvV6ayOte2HB77ZRj8NOE7PPj092nbN8yHmn4Oz.",
+      "name": "Ngọc",
+      "id": 2
+    }
+  ]
 }
