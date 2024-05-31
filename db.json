@@ -1,34 +1,6 @@
 {
   "students": [
     {
-      "name": "SV1 jgiibg đẻ",
-      "age": 18,
-      "email": "angocit@gmail.com",
-      "phone": "0988888888",
-      "id": 1
-    },
-    {
-      "name": "Sinh viên 2 cập nhật",
-      "age": 19,
-      "email": "ngco@gmail.com",
-      "phone": "0989992212",
-      "id": 2
-    },
-    {
-      "name": "sdafsafsadfads",
-      "age": 18,
-      "address": "",
-      "classname": "",
-      "id": 3
-    },
-    {
-      "name": "sdafsafsadfads",
-      "age": 18,
-      "address": "",
-      "classname": "",
-      "id": 4
-    },
-    {
       "name": "sdafsadfasdf",
       "age": 18,
       "address": "dfasdfasdfasd@sdfsdf",
@@ -92,5 +64,18 @@
       "id": 13
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$8u/MIGjWjBrq40iHGmXgqes1Cf7m6a1smHqFwv5CA.fRqqJ1ZtqMu",
+      "name": "sàdsafads",
+      "id": 1
+    },
+    {
+      "email": "angocit2@gmail.com",
+      "password": "$2a$10$O9OzPG/n7lzXYbRx40HDx.1P2W1yLy5RjAS5qROzOhjFh8v8mJ2hm",
+      "name": "sdafjaskdfj",
+      "id": 2
+    }
+  ]
 }

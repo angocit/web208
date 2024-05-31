@@ -35,7 +35,7 @@
             <td class="border p-2">{{student.age}}</td>
             <td class="border p-2">{{student.address}}</td>
             <td class="border p-2">{{student.classname}}</td>
-            <td class="border p-2"><a href="dashboard/students/edit/{{student.id}}">Sửa</a><button>Xóa</button></td>
+            <td class="border p-2"><a href="dashboard/students/edit/{{student.id}}">Sửa</a><button (click)="onDelete(student.id)">Xóa</button></td>
         </tr>
     </tbody>
 </table>

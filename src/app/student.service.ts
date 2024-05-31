@@ -21,4 +21,7 @@ export class StudentService {
   Add_Student = (data:IStudent)=>{
     return this.http.post(this.API_URL,data)
   }
+  Delete_Student = (id:any)=>{
+    return this.http.delete(this.API_URL+'/'+id)
+  }
 }

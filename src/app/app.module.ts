@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { StudentEditComponent } from './components/student-edit/student-edit.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { StudentEditComponent } from './components/student-edit/student-edit.com
     ClientComponent,
     AdminComponent,
     HomeComponent,
-    StudentEditComponent
+    StudentEditComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

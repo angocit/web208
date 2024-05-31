@@ -36,4 +36,12 @@ export class StudentListComponent {
           this.messageService.add({ severity: 'error', summary: 'Success', detail: 'Thêm thành công' }); 
         })
     }
+    onDelete = (id:any)=>{
+      if(confirm('Bạn chắc chứ?')){
+        this.studentService.Delete_Student(id).subscribe(data=>{
+            alert('Xóa thành công')
+            this.students = this.students.filter(student=>student.id!==id)
+        })
+      }
+    }
 }

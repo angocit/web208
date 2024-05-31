@@ -1,0 +1,7 @@
+<form [formGroup]="loginform" class="flex flex-col gap-2" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Email" formControlName="email"/>
+    <span *ngIf="!loginform.controls.email.valid&&(loginform.controls.email.dirty||loginform.controls.email.touched)">Sai định dạng email</span>
+    <input type="text" placeholder="Password" formControlName="password"/>
+    <span *ngIf="!loginform.controls.password.valid&&(loginform.controls.password.dirty||loginform.controls.password.touched)">Mật khẩu lớn hơn 8 kí tự</span>
+    <button type="submit" [disabled]="!loginform.valid">Đăng nhập</button>
+</form>
