@@ -8,10 +8,14 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { adminGuard } from './Guards/admin.guard';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path:'',component:ClientComponent,children:[
-    {path:'',component:HomeComponent}    
+    {path:'',component:HomeComponent},
+    {path:'register',component:RegisterComponent}  ,
+    {path:'login',component:LoginComponent}  
   ]},
   {path:'admin',component:AdminComponent,canActivate:[adminGuard],children:[
     {path:'product',component:ProductComponent},
