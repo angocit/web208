@@ -22,6 +22,10 @@ export class RegisterComponent {
         console.log(data);  
         alert("Đăng ký thành công");  
         this.router.navigate(['login']);    
-    })
+    }, error=>{
+      console.log(error); 
+      alert(error.error);  
+    }
+  )
   }
 }
