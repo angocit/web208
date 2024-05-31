@@ -12,4 +12,7 @@ export class UserService {
   RegisterUser = (data:IUser):Observable<any>=>{
     return this.http.post(this.API_URL+'/register', data)
   }
+  UserLogin = (data:IUser):Observable<any>=>{
+    return this.http.post(this.API_URL+'/login',data)
+  }
 }
