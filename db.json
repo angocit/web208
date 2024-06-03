@@ -76,6 +76,12 @@
       "password": "$2a$10$O9OzPG/n7lzXYbRx40HDx.1P2W1yLy5RjAS5qROzOhjFh8v8mJ2hm",
       "name": "sdafjaskdfj",
       "id": 2
+    },
+    {
+      "email": "ngocngo@gmail.com",
+      "password": "$2a$10$7GsSQchCqGFgcgAd2ivhW.xB5FUWJiFrE/hYNkep5rQyEpzB56.0K",
+      "name": "Ngoc",
+      "id": 3
     }
   ]
 }
