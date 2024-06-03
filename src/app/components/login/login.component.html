@@ -5,4 +5,4 @@
     <span *ngIf="!loginform.controls.password.valid &&(loginform.controls.password.dirty||loginform.controls.password.touched)">Mật khẩu không nhỏ hơn 8 kí tự</span>
     <button type="submit" [disabled]="!loginform.valid">Đăng nhập</button>
 </form>
-
+<button type="button" (click)="CheckUser()">Ktra</button>
