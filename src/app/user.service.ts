@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUSER } from './interface/user';
 import { Observable } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,22 @@ export class UserService {
   }
   UserLogin = (datauser:IUSER):Observable<any>=>{
     return this.http.post(this.API_URL+'/login', datauser)
+  }
+  CheckUserValid = ():boolean=>{  
+    let check =false;  
+    try {
+      const userinfo:any = localStorage.getItem('user')
+      
+      if (userinfo!==null){
+         const user = JSON.parse(userinfo)
+         const userobj = jwtDecode(user?.token)
+         if ((userobj.sub as any ==1)&&(userobj.exp as any > (Date.now()/1000))){
+           check = true
+         }
+      }
+    } catch (error) {
+        return false
+    }
+    return check
   }
 }

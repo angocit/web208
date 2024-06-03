@@ -34,6 +34,12 @@
       "password": "$2a$10$yPBLwK92MxXsa7sBCBpvreyelTO020Vv/pcYHA82cLxee5Vf/cWaq",
       "name": "Ngoc2",
       "id": 2
+    },
+    {
+      "email": "ngocnv34@fe.edu.vn",
+      "password": "$2a$10$fNImcMeOAK29wfDgHAEKIeLK7L6Rd6zuuiVef4Yx8ZoVYaWKzNmBK",
+      "name": "Ngoc 3",
+      "id": 3
     }
   ]
 }

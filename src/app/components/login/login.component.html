@@ -1,7 +1,8 @@
-<form [formGroup]="loginform" class="flex flex-col" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginform" class="flex flex-col gap-6" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="email" placeholder="Email của bạn"/>
     <span *ngIf="!loginform.controls.email.valid&&(loginform.controls.email.dirty||loginform.controls.email.touched)">Email không đúng định dạng</span>
     <input type="password" formControlName="password" placeholder="Mật khẩu"/>
     <span *ngIf="!loginform.controls.password.valid&&(loginform.controls.password.dirty||loginform.controls.password.touched)">Password phải lớn hơn 8 kí tự</span>
     <button type="submit" [disabled]="!loginform.valid">Đăng nhập</button>
 </form>
+<button type="button" (click)="CheckToken()">Kiểm tra TT token</button>
