@@ -1,0 +1,13 @@
+<form [formGroup]="productform" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName = "name"/>
+    <span *ngIf="!productform.controls.name.valid&&(productform.controls.name.dirty||productform.controls.name.touched)">
+    Tên bắt buộc phải nhập
+    </span>
+    <input type="text" formControlName = "image"/> 
+    <span *ngIf="!productform.controls.image.valid&&(productform.controls.image.dirty||productform.controls.image.touched)">
+        Ảnh bắt buộc phải nhập
+        </span>
+    <input type="number" formControlName = "price"/> 
+    <input type="text" formControlName = "category"/>
+    <button type="submit">Thêm sản phẩm</button> 
+</form>
