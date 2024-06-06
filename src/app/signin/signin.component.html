@@ -1,0 +1,5 @@
+<form class="flex flex-col" [formGroup]="loginform" (ngSubmit)="onLogin()">
+    <input type="text" placeholder="Email" formControlName="email"/>
+    <input type="password" placeholder="Password" formControlName="password"/>
+    <button type="submit">Đăng nhập</button>
+</form>

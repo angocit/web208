@@ -1,4 +1,47 @@
 {
-    "products":[],
-    "users":[]
+  "categorys": [
+    {
+      "id": 1,
+      "name": "fashions"
+    },
+    {
+      "id": 2,
+      "name": "Jewelry"
+    }
+  ],
+  "products": [
+    {
+      "name": "Sản phẩm 1 edit",
+      "image": "sdfasdfads",
+      "price": 100000,
+      "id": 1
+    },
+    {
+      "name": "sdfsdfds",
+      "image": "sdfsdf",
+      "price": 11111,
+      "id": 2
+    },
+    {
+      "name": "dsafads",
+      "image": "fsadfads",
+      "category": "1",
+      "price": 32423432,
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$uSx4HJcS0qtW73z8SHSO6eCatfuJumZqMnwTmp/1JHSLYxeeXlsBS",
+      "name": "Ngọc",
+      "id": 1
+    },
+    {
+      "email": "angocit2@gmail.com",
+      "password": "$2a$10$XulvGYJ2IVxVtnhuS92hieMuAv63fu2yLtvYFBNnHBd4gKiSeO0i.",
+      "name": "Ngọc2",
+      "id": 2
+    }
+  ]
 }

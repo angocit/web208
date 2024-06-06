@@ -1,0 +1,13 @@
+<form class="flex flex-col" [formGroup]="productform" (ngSubmit)="onAddProduct()">
+    <input type="text" placeholder="Tên sp" formControlName="name"/>
+    <span *ngIf="!productform.controls.name.valid&&(productform.controls.name.dirty||productform.controls.name.touched)">Tên không để trống</span>
+    <input type="text" placeholder="Ảnh" formControlName="image"/>
+    <span *ngIf="!productform.controls.image.valid&&(productform.controls.image.dirty||productform.controls.image.touched)">Ảnh không để trống</span>
+    <input type="number" placeholder="Giá" formControlName="price"/>
+    <select formControlName="category" class="border">
+        @for(cat of category; track cat){
+            <option value="{{cat.id}}">{{cat.name}}</option>
+        }
+    </select>
+    <button type="submit">Thêm sản phẩm</button>
+</form>
