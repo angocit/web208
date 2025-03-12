@@ -1,3 +1,15 @@
 <app-header/>
-<h1 class="text-red-700 text-[24px] font-bold">Hello world</h1>
+<h1 class="text-red-700 text-[24px] font-bold">Thông tin sản phẩm</h1>
+<div class="max-w-6xl mx-auto grid grid-cols-4 gap-4">
+    <!-- <div *ngFor="let product of products; index as i"> -->
+    @for(product of products; track product.id; let i = $index){
+    <div>
+        <img src="{{product.image}}" width="400"/>
+        <span>STT: {{i}}</span>
+        <h3>{{product.title}}</h3>
+        <span>Price: {{product.price}}</span>
+    </div>
+}   
+    <!-- </div> -->
+</div>
 <app-footer/>
