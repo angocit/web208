@@ -10,11 +10,15 @@
             </form>
             <nav>
                 <ul class='flex gap-4'>
-                    <li>Trang chủ</li>
-                    <li>Giới thiệu</li>
-                    <li>Shop</li>
-                    <li>Tin tức</li>
-                    <li>Liên hệ</li>
+                    @for(menu of  menus; track menu.id){
+                        <li *ngIf="menu.parent==0"><a href="{{menu.url}}">{{menu.name}}</a>
+                            <ul *ngIf="checkChildren(menus,menu.id)">
+                                @for(childmenu of  menus; track childmenu.id){
+                                    <li *ngIf="childmenu.parent==menu.id"><a href="{{childmenu.url}}">{{childmenu.name}}</a></li>
+                                }
+                            </ul>
+                        </li> 
+                    }
                 </ul>
             </nav>
         </div>
