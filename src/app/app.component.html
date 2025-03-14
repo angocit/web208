@@ -1,4 +1,8 @@
 <app-header/>
+<div *ngIf="show; else showfalse" class="text-red-700 text-[32px] font-bold">Hello world</div>
+<ng-template #showfalse>
+    <div>Show false</div>
+</ng-template>
 <h1 class="text-red-700 text-[24px] font-bold">Thông tin sản phẩm</h1>
 <div class="max-w-6xl mx-auto grid grid-cols-4 gap-4">
     <!-- <div *ngFor="let product of products; index as i"> -->
@@ -8,6 +12,10 @@
         <span>STT: {{i}}</span>
         <h3>{{product.title}}</h3>
         <span>Price: {{product.price}}</span>
+        <button class="bg-red-800 px-4 py-2 text-white" *ngIf="product.price>50;else chitiet">Mua ngay</button>
+        <ng-template #chitiet>
+            <button class="bg-blue-900 px-4 py-2 text-white">Xem chi tiết</button>
+        </ng-template>
     </div>
 }   
     <!-- </div> -->

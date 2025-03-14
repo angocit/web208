@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'wd19320';
+  show = false;
   products:IProduct[] = [{
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
