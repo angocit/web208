@@ -62,4 +62,7 @@ export class AppComponent {
       "count": 430
     }
   }]
+  showhide = ()=>{
+    this.show = !this.show
+  }
 }

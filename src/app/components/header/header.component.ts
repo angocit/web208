@@ -73,6 +73,9 @@ checkChildren = (menulist:IMenu[],id:number)=>{
 }
 GenMenu=(menulist:IMenu[],parent:number=0)=>{
 let menu = `<ul>`
+if (parent==0){
+	menu = `<ul class='flex gap-4'>`
+}
 		for (let item of menulist){
 			if (item.parent == parent){
 				menu += `<li>
