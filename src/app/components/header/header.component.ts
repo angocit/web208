@@ -30,6 +30,18 @@ export class HeaderComponent {
 		parent:2
 	},
 	{
+		id:7,
+		name:"Clother",
+		url:"/clother",
+		parent:3
+	},
+	{
+		id:8,
+		name:"TShirt",
+		url:"/tshirt",
+		parent:3
+	},
+	{
 		id:4,
 		name:"Other",
 		url:"/other",
@@ -58,5 +70,18 @@ checkChildren = (menulist:IMenu[],id:number)=>{
         }
     }
     return check;
+}
+GenMenu=(menulist:IMenu[],parent:number=0)=>{
+let menu = `<ul>`
+		for (let item of menulist){
+			if (item.parent == parent){
+				menu += `<li>
+					<a href="${item.url}">${item.name}</a>
+					${(this.checkChildren(menulist,item.id))?this.GenMenu(menulist,item.id):""}
+				</li>`
+			}
+		}
+	menu +=`</ul>`
+	return menu
 }
 }
