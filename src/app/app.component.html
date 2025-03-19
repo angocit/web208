@@ -9,11 +9,11 @@
     <!-- <div *ngFor="let product of products; index as i"> -->
     @for(product of products; track product.id; let i = $index){
     <div>
-        <img src="{{product.image}}" width="400"/>
+        <img [src]="product.image" width="400"/>
         <span>STT: {{i}}</span>
         <h3 [style]="{'color':'red','font-weight':'bold'}">{{product.title}}</h3>
         <span>Price: {{product.price}}</span>
-        <button class="bg-red-800 px-4 py-2 text-white" *ngIf="product.price>50;else chitiet">Mua ngay</button>
+        <button [ngClass]="'bg-red-800 px-4 py-2 text-white'" *ngIf="product.price>50;else chitiet">Mua ngay</button>
         <ng-template #chitiet>
             <button class="bg-blue-900 px-4 py-2 text-white">Xem chi tiết</button>
         </ng-template>
