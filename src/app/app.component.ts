@@ -4,10 +4,10 @@ import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from './components/footer/footer.component';
 import { IProduct } from './interface/product';
 import { CommonModule } from '@angular/common';
-
+import {FormsModule} from '@angular/forms'
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,FooterComponent,CommonModule],
+  imports: [RouterOutlet, HeaderComponent,FooterComponent,CommonModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
