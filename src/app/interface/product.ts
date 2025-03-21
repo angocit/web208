@@ -7,7 +7,7 @@ export interface IProduct {
   image: string;
   rating: Rating;
 }
-
+export type ProductLite = Pick<IProduct,"title"|"price"|"image"|"id">
 interface Rating {
   rate: number;
   count: number;

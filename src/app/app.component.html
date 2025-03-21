@@ -1,5 +1,11 @@
 <app-header/>
-<input class="border px-2 py-1 w-2xl" type="text" [(ngModel)]="title"/>
+<div class="flex flex-col gap-2 max-w-2xl mx-auto mt-8">
+<input class="border px-2 py-1 w-2xl" type="text" [(ngModel)]="title" placeholder="Tên SP"/>
+<input class="border px-2 py-1 w-2xl" type="text" [(ngModel)]="image" placeholder="Ảnh SP"/>
+<input class="border px-2 py-1 w-2xl" type="text" [(ngModel)]="price" placeholder="Giá SP"/>
+<button (click)="onSubmit()">Thêm mới</button>
+</div>
+<button (click)="getAllProduct()">Tải sản phẩm</button>
 <p>{{title}}</p>
 <button class="border px-4 py-1 rounded" (click)="showhide()">Ẩn/Hiện</button>
 <div *ngIf="show; else showfalse" class="text-red-700 text-[32px] font-bold">Hello world</div>
@@ -15,6 +21,7 @@
         <span>STT: {{i}}</span>
         <h3 [style]="{'color':'red','font-weight':'bold'}">{{product.title}}</h3>
         <span>Price: {{product.price}}</span>
+        <button (click)="onDelete(product.id)">Xóa</button>
         <button [ngClass]="(product.price>50)?'bg-red-800 px-4 py-2 text-white':'bg-blue-800 px-4 py-2 text-white'">Add to cart</button>
     </div>
 }   
