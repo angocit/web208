@@ -16,15 +16,8 @@
 <div class="max-w-6xl mx-auto grid grid-cols-4 gap-4">
     <!-- <div *ngFor="let product of products; index as i"> -->
     @for(product of products; track product.id; let i = $index){
-    <div>
-        <img [src]="product.image" width="400"/>
-        <span>STT: {{i}}</span>
-        <h3 [style]="{'color':'red','font-weight':'bold'}">{{product.title}}</h3>
-        <span>Price: {{product.price}}</span>
-        <button (click)="onDelete(product.id)">Xóa</button>
-        <button [ngClass]="(product.price>50)?'bg-red-800 px-4 py-2 text-white':'bg-blue-800 px-4 py-2 text-white'">Add to cart</button>
-    </div>
-}   
+        <app-productitem [product]="product"></app-productitem>
+    }   
     <!-- </div> -->
 </div>
 <app-footer/>

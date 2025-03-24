@@ -6,9 +6,10 @@ import { IProduct, ProductLite } from './interface/product';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import axios from "axios"
+import { ProductitemComponent } from './components/productitem/productitem.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,FooterComponent,CommonModule,FormsModule],
+  imports: [RouterOutlet, HeaderComponent,FooterComponent,CommonModule,FormsModule,ProductitemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -38,16 +39,5 @@ export class AppComponent {
   } catch (error) {
     console.log(error);        
   }
-  }
-  onDelete = async(id:number)=>{
-      if (confirm("Bạn chắc chứ?")){
-        try {
-          await axios.delete(`http://localhost:3000/products/${id}`)
-          alert("Xóa thành công")
-          this.getAllProduct()
-      } catch (error) {
-        console.log(error);        
-      }
-      }
-  }
+  }  
 }
