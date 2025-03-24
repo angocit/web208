@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+header ul li{position: relative;}
+header ul li ul{display: none; width: 200px; position: absolute; top: 20px; left: 0;}
+header ul li:hover ul{
+    display: block;
+}
