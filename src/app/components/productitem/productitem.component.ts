@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductitemComponent {
     @Input() product:ProductLite = {} as ProductLite
+    @Input() name:string = ''
     onDelete = async(id:number)=>{
       if (confirm("Bạn chắc chứ?")){
         try {

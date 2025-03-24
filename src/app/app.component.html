@@ -5,7 +5,6 @@
 <input class="border px-2 py-1 w-2xl" type="text" [(ngModel)]="price" placeholder="Giá SP"/>
 <button (click)="onSubmit()">Thêm mới</button>
 </div>
-<button (click)="getAllProduct()">Tải sản phẩm</button>
 <p>{{title}}</p>
 <button class="border px-4 py-1 rounded" (click)="showhide()">Ẩn/Hiện</button>
 <div *ngIf="show; else showfalse" class="text-red-700 text-[32px] font-bold">Hello world</div>

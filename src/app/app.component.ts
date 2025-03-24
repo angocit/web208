@@ -40,4 +40,7 @@ export class AppComponent {
     console.log(error);        
   }
   }  
+  ngOnInit(){
+    this.getAllProduct();
+  }
 }
