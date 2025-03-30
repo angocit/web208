@@ -1,5 +1,6 @@
 <form [formGroup]="productform" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="name"/>
+    <span *ngIf="!productform.controls.name.valid">Tên không để trống và > 6 kí tự</span>
     <input type="text" formControlName="image"/>
     <input type="text" formControlName="price"/>
     <button type="submit">Thêm mới</button>
