@@ -29,6 +29,12 @@
       "image": "234234",
       "price": 0,
       "id": 7
+    },
+    {
+      "name": "sdfs435",
+      "image": "fsdfsdf",
+      "price": "345345",
+      "id": 8
     }
   ]
 }
