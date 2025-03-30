@@ -1,15 +1,16 @@
 import { CanActivateFn, Router } from '@angular/router';
 
 export const adminGuard: CanActivateFn = (route, state) => {
-  // let user:any = localStorage.getItem("user")
-  // if (user){
-  //   user = JSON.parse(user)
-  // }
-  const router = new Router()
-  const user = {
-    username:'admin',
-    role:'admin'
+  let user:any = localStorage.getItem("user")
+  if (user){
+    user = JSON.parse(user)
   }
+  const router = new Router()
+  // const user = {
+  //   username:'admin',
+  //   role:'admin'
+  // }
+  console.log(user);
   if (user.role =='admin')
   {
     return true

@@ -36,5 +36,19 @@
       "price": "345345",
       "id": 8
     }
+  ],
+  "users": [
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$dPhGFavdnsTh6IMRltmHIuz23Z89IysE4QCB6GwxlK29J/X7VALiO",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "email": "angocit2@gmail.com",
+      "password": "$2a$10$GFEDP9ns01qzQceMvoJXMOLfhSnRYOXwh1N10KcXtkwojWc93ps5a",
+      "role": "admin",
+      "id": 2
+    }
   ]
 }
