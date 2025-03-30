@@ -5,6 +5,12 @@
       "image": "234234",
       "price": "32423423",
       "id": 3
+    },
+    {
+      "name": "Sản phẩm 1",
+      "image": "https://img.muji.net/img/item/4550344275733_1260.jpg",
+      "price": "100000",
+      "id": 4
     }
   ]
 }
