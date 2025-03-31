@@ -6,7 +6,7 @@ import { adminGuard } from './Guard/admin.guard';
 import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
-    {path:"product-add",component:ProductaddComponent,canActivate:[adminGuard]},
+    {path:"product-add",component:ProductaddComponent},
     {path:"product-edit/:id",component:ProducteditComponent},
     {path:"login",component:LoginComponent},
     {path:"register",component:RegisterComponent},
