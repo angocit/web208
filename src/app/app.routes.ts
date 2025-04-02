@@ -4,10 +4,19 @@ import { ProducteditComponent } from './components/product/productedit/producted
 import { LoginComponent } from './components/login/login.component';
 import { adminGuard } from './Guard/admin.guard';
 import { RegisterComponent } from './components/register/register.component';
+import { ClientComponent } from './layout/client/client.component';
+import { HomeComponent } from './component/client/home/home.component';
+import { AdminComponent } from './layout/admin/admin.component';
 
 export const routes: Routes = [
-    {path:"product-add",component:ProductaddComponent},
-    {path:"product-edit/:id",component:ProducteditComponent},
-    {path:"login",component:LoginComponent},
-    {path:"register",component:RegisterComponent},
+    {path:"",component:ClientComponent,children:[
+        {path:"",component:HomeComponent},
+        {path:"login",component:LoginComponent},
+        {path:"register",component:RegisterComponent}
+    ]},
+    {path:"admin",component:AdminComponent,children:[
+        {path:"product-add",component:ProductaddComponent},
+        {path:"product-edit/:id",component:ProducteditComponent},
+    ]}   
+    
 ];
