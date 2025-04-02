@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
-import { ProductaddComponent } from './components/product/productadd/productadd.component';
-import { ProducteditComponent } from './components/product/productedit/productedit.component';
-import { LoginComponent } from './components/login/login.component';
 import { adminGuard } from './Guard/admin.guard';
-import { RegisterComponent } from './components/register/register.component';
 import { ClientComponent } from './layout/client/client.component';
-import { HomeComponent } from './component/client/home/home.component';
+import { HomeComponent } from './components/client/home/home.component';
 import { AdminComponent } from './layout/admin/admin.component';
+import { LoginComponent } from './components/client/login/login.component';
+import { RegisterComponent } from './components/client/register/register.component';
+import { AddComponent } from './components/product/add/add.component';
 
 export const routes: Routes = [
     {path:"",component:ClientComponent,children:[
@@ -15,8 +14,7 @@ export const routes: Routes = [
         {path:"register",component:RegisterComponent}
     ]},
     {path:"admin",component:AdminComponent,children:[
-        {path:"product-add",component:ProductaddComponent},
-        {path:"product-edit/:id",component:ProducteditComponent},
+        {path:"product/add",component:AddComponent}
     ]}   
     
 ];

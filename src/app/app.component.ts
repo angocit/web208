@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./components/header/header.component";
-import { FooterComponent } from './components/footer/footer.component';
 import { IProduct, ProductLite } from './interface/product';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import axios from "axios"
-import { ProductitemComponent } from './components/productitem/productitem.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent,FooterComponent,CommonModule,FormsModule,ProductitemComponent],
+  imports: [RouterOutlet,CommonModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

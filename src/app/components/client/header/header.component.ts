@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IMenu } from '../../interface/product';
 import { CommonModule } from '@angular/common';
+import { IMenu } from '../../../interface/menu';
 
 @Component({
   selector: 'app-header',
@@ -80,7 +80,7 @@ if (parent==0){
 			if (item.parent == parent){
 				menu += `<li>
 					<a href="${item.url}">${item.name}</a>
-					${(this.checkChildren(menulist,item.id))?this.GenMenu(menulist,item.id):""}
+					${(this.checkChildren(menulist,item.id!))?this.GenMenu(menulist,item.id):""}
 				</li>`
 			}
 		}

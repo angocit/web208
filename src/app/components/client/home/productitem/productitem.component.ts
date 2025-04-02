@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { IProduct, ProductLite } from '../../interface/product';
+// import { IProduct, ProductLite } from '../../interface/product';
 import axios from 'axios';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ProductLite } from '../../../../interface/product';
 
 @Component({
   selector: 'app-productitem',
