@@ -1,0 +1,26 @@
+<h1 class="text-center text-[32px] my-4">Danh sách sản phẩm</h1>
+<table class="w-full border">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tên</th>
+            <th>Danh mục</th>
+            <th>Giá tiền</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="[&_td]:border [&_td]:px-2 [&_td]:py-1">
+        <tr *ngFor="let product of products; index as i">
+            <td>{{i+1}}</td>
+            <td><img src={{product.image}}/></td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <a href="/admin/product/edit/{{product.id}}">Sửa</a>
+                <button (click)="onDelete(product.id)">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

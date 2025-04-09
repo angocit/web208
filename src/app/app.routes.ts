@@ -6,15 +6,21 @@ import { AdminComponent } from './layout/admin/admin.component';
 import { LoginComponent } from './components/client/login/login.component';
 import { RegisterComponent } from './components/client/register/register.component';
 import { AddComponent } from './components/product/add/add.component';
+import { EditComponent } from './components/product/edit/edit.component';
+import { ListComponent } from './components/product/list/list.component';
+import { SearchComponent } from './components/client/search/search.component';
 
 export const routes: Routes = [
     {path:"",component:ClientComponent,children:[
         {path:"",component:HomeComponent},
+        {path:"search",component:SearchComponent},
         {path:"login",component:LoginComponent},
         {path:"register",component:RegisterComponent}
     ]},
-    {path:"admin",component:AdminComponent,children:[
-        {path:"product/add",component:AddComponent}
+    {path:"admin",component:AdminComponent,canActivate:[adminGuard],children:[
+        {path:"product/add",component:AddComponent},
+        {path:"product/edit/:id",component:EditComponent},
+        {path:"product/list",component:ListComponent}
     ]}   
     
 ];

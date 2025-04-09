@@ -1,18 +1,25 @@
 {
   "products": [
     {
-      "name": "éd",
-      "image": "sdfds",
+      "name": "Sản phẩm demo 1",
+      "image": "đấ",
       "category": "2",
-      "price": "324234",
+      "price": "342",
       "id": 1
     },
     {
-      "name": "Sản phẩm b",
-      "image": "sdfsdf",
-      "category": "1",
-      "price": "4234",
+      "name": "Sản phẩm demo 2",
+      "image": "đấ",
+      "category": "2",
+      "price": "342",
       "id": 2
+    },
+    {
+      "name": "Sản phẩm demo 3",
+      "image": "đấ",
+      "category": "2",
+      "price": "342",
+      "id": 3
     }
   ],
   "users": [
@@ -27,6 +34,12 @@
       "password": "$2a$10$GFEDP9ns01qzQceMvoJXMOLfhSnRYOXwh1N10KcXtkwojWc93ps5a",
       "role": "admin",
       "id": 2
+    },
+    {
+      "email": "ngocnv@gmail.com",
+      "password": "$2a$10$lhFJWie96l/BeX8RvIjSHODW8X9hb8e1.pZ0UA4m.0c.SBQ.RmE3e",
+      "role": "admin",
+      "id": 3
     }
   ]
 }

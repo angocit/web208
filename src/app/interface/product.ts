@@ -1,13 +1,20 @@
 export interface IProduct {
+  name: string;
+  image: string;
+  category: string;
+  price: string;
+  id?: number;
+}
+export interface IProductDemo {
   id: number;
-  title: string;
+  name: string;
   price: number;
   description: string;
   category: string;
   image: string;
   rating: Rating;
 }
-export type ProductLite = Pick<IProduct,"title"|"price"|"image"|"id">
+export type ProductLite = Pick<IProductDemo,"name"|"price"|"image"|"id">
 interface Rating {
   rate: number;
   count: number;
