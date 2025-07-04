@@ -19,16 +19,35 @@
     <nav>
       <ul class="flex gap-4">
             @for (menu of menus; track menu.id;let i=$index){
+              <!-- Nếu là phần tử đầu tiên thì hiển thị màu đỏ, còn lại màu đen
                 @if (i==0){
-                <li>
-                    <a class="text-red-800" [href]="menu.url">{{menu.name}}</a>
-                </li>
+                  <li>
+                      <a class="text-red-800" [href]="menu.url">{{menu.name}}</a>
+                  </li>
                 }
                 @else {
                   <li>
                     <a [href]="menu.url">{{menu.name}}</a>
-                </li>
-                }
+                  </li>
+                } -->
+                <!-- Nếu vị trí 1 hiển thị đỏ, 2 hiển thị xanh, còn lại đen -->
+                  @switch (i) {
+                    @case (0) {
+                      <li>
+                        <a class="text-red-800" [href]="menu.url">{{menu.name}}</a>
+                      </li>
+                    }
+                    @case (1) {
+                      <li>
+                      <a class="text-blue-700" [href]="menu.url">{{menu.name}}</a>
+                      </li>
+                    }
+                    @default {
+                      <li>
+                      <a [href]="menu.url">{{menu.name}}</a>
+                      </li>
+                    } 
+                  }
             }
       </ul>
     </nav>
