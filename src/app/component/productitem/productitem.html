@@ -4,5 +4,5 @@
     <!-- <h3 [style]="{'color':'red','font-weight':'bold'}">{{product.ten_san_pham}}</h3> -->
       <h3 [style.color]="'red'">{{product.ten_san_pham}}</h3>
     <span>{{product.gia_tien}}</span><br>
-    <button class="border rounded bg-cyan-900 text-white px-4 py-2">Add to cart</button>
+    <button (click)="AddToCart()" class="border rounded bg-cyan-900 text-white px-4 py-2">Add to cart</button>
 </div>

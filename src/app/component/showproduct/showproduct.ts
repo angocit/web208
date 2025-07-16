@@ -22,7 +22,7 @@ export class Showproduct {
       console.log(error);      
     }
   }
-  addToCart = (id:number)=>{
-    alert(`Thêm sản phẩm id ${id} vào giỏ hàng thành công `)
+  onAddTocart = (product:IProduct)=>{
+    console.log(product);
   }
 }
