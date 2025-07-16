@@ -1,0 +1,5 @@
+ <div class="grid grid-cols-4">
+@for (product of products;track product.ten_san_pham){
+    <app-productitem [product]="product"/>
+}
+</div>

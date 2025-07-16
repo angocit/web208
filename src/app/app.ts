@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./component/header/header";
 import { Slide } from "./component/slide/slide";
-import { IProduct } from './interface/product';
 import axios from 'axios'
+import { IProduct } from './interface/product';
+import { Showproduct } from "./component/showproduct/showproduct";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Slide],
+  imports: [RouterOutlet, Header, Slide, Showproduct],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
