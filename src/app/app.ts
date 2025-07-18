@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from "./component/client/header/header";
+import { Header } from "./layouts/client/header/header";
 import { Slide } from "./component/slide/slide";
 import axios from 'axios'
 import { IProduct } from './interface/product';

@@ -13,6 +13,6 @@ export const routes: Routes = [
         {path:"detail",component:Detail}
     ]},
     {path:"admin",component:Admin,children:[
-        {path:"dashboard",component:Dashboard}
+        {path:"",component:Dashboard}
     ]}
 ];
