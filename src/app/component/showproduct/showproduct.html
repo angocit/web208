@@ -1,4 +1,4 @@
  <div class="grid grid-cols-4">
-@for (product of products;track product.ten_san_pham){
-    <app-productitem [product]="product" (addtocart)="onAddTocart($event)"/>}
+@for (item of products;track item.ten_san_pham){
+    <app-productitem [product]="item" (addtocart)="onAddTocart($event)"/>}
 </div>

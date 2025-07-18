@@ -23,6 +23,7 @@ export class Showproduct {
     }
   }
   onAddTocart = (product:IProduct)=>{
+    // Dữ liệu từ component con đẩy ra
     console.log(product);
   }
 }

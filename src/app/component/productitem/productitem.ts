@@ -8,7 +8,7 @@ import { IProduct } from '../../interface/product';
   styleUrl: './productitem.css'
 })
 export class Productitem {
-   @Input() product:IProduct = {}as IProduct
+   @Input() product:IProduct = {} as IProduct
    @Output() addtocart:EventEmitter<IProduct>= new EventEmitter()
     AddToCart = ()=>{
       this.addtocart.emit(this.product)

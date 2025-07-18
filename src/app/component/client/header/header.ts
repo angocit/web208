@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IMenu } from '../../interface/menu';
+import { IMenu } from '../../../interface/menu';
 import {FormsModule} from '@angular/forms'
 
 @Component({
