@@ -10,5 +10,9 @@ import { Sidebar } from "./sidebar/sidebar";
   styleUrl: './admin.css'
 })
 export class Admin {
-
+  bt_status:boolean = false;
+  onClickButton=(value:boolean)=>{
+    // console.log(value);  
+    this.bt_status = value  
+  }
 }
