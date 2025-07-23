@@ -4,15 +4,18 @@ import { Detail } from './component/client/detail/detail';
 import { Client } from './layouts/client/client';
 import { Admin } from './layouts/admin/admin';
 import { Dashboard } from './component/admin/dashboard/dashboard';
+import { adminGuard } from './guards/admin-guard';
+import { Login } from './component/login/login';
 
 export const routes: Routes = [
     // {path:"",component:Home},
     //  {path:"detail",component:Detail}
     {path:"",component:Client,children:[
         {path:"",component:Home},
-        {path:"detail/:id",component:Detail}
+        {path:"detail/:id",component:Detail},
+        {path:"login",component:Login}
     ]},
-    {path:"admin",component:Admin,children:[
+    {path:"admin",component:Admin,canActivate:[adminGuard],children:[
         {path:"",component:Dashboard}
     ]}
 ];
