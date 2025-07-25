@@ -1,0 +1,22 @@
+<h1>Thêm mới sản phẩm</h1>
+<form class="flex flex-col gap-2 [&_input]:border [&_span]:text-red-600" [formGroup]="productform" (ngSubmit)="OnSubmit()">
+    <input type="text" formControlName="ten_san_pham" placeholder="Tên sản phẩm"/>
+    @if(!productform.controls.ten_san_pham.valid&&
+    (productform.controls.ten_san_pham.dirty||productform.controls.ten_san_pham.touched))
+    {
+        <span>Tên sản phẩm không để trống và >= 6 ký tự</span>
+    }
+    <input type="text" formControlName="hinh_anh" placeholder="Ảnh sản phẩm"/>
+     @if(!productform.controls.hinh_anh.valid&&
+    (productform.controls.hinh_anh.dirty||productform.controls.hinh_anh.touched))
+    {
+        <span>Ảnh không được để trống</span>
+    }
+    <input type="number" formControlName="gia_tien" placeholder="Giá tiền"/>
+     @if(!productform.controls.gia_tien.valid&&
+    (productform.controls.gia_tien.dirty||productform.controls.gia_tien.touched))
+    {
+        <span>Giá không < 1000</span>
+    }
+    <button [disabled]="!productform.valid">Thêm mới</button>
+</form>

@@ -1,0 +1,7 @@
+<h1>Sửa sản phẩm</h1>
+<form [formGroup]="productform" (ngSubmit)="OnSubmit()">
+    <input type="text" formControlName="ten_san_pham" placeholder="Tên sản phẩm"/>
+    <input type="text" formControlName="hinh_anh" placeholder="Ảnh sản phẩm"/>
+    <input type="number" formControlName="gia_tien" placeholder="Giá tiền"/>
+    <button>Cập nhật</button>
+</form>

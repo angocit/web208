@@ -6,6 +6,8 @@ import { Admin } from './layouts/admin/admin';
 import { Dashboard } from './component/admin/dashboard/dashboard';
 import { adminGuard } from './guards/admin-guard';
 import { Login } from './component/login/login';
+import { Addproduct } from './component/admin/addproduct/addproduct';
+import { Editproduct } from './component/admin/editproduct/editproduct';
 
 export const routes: Routes = [
     // {path:"",component:Home},
@@ -16,6 +18,8 @@ export const routes: Routes = [
         {path:"login",component:Login}
     ]},
     {path:"admin",component:Admin,canActivate:[adminGuard],children:[
-        {path:"",component:Dashboard}
+        {path:"",component:Dashboard},
+        {path:"addproduct",component:Addproduct},
+        {path:"editproduct/:id",component:Editproduct}
     ]}
 ];
