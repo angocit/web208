@@ -1,0 +1,23 @@
+<h1>Danh sách sản phẩm</h1>
+<table>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Ảnh</th>
+            <th>Giá tiền</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of products; track $index; let i = $index) {
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{product.ten_san_pham}}</td>
+                <td><img src="{{product.hinh_anh}}" width="60"/></td>
+                <td>{{product.gia_tien}}</td>
+                <td><a href="#">Sửa</a> <button>Xóa</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -8,6 +8,7 @@ import { adminGuard } from './guards/admin-guard';
 import { Login } from './component/login/login';
 import { Addproduct } from './component/admin/addproduct/addproduct';
 import { Editproduct } from './component/admin/editproduct/editproduct';
+import { Productlist } from './component/admin/productlist/productlist';
 
 export const routes: Routes = [
     // {path:"",component:Home},
@@ -19,6 +20,7 @@ export const routes: Routes = [
     ]},
     {path:"admin",component:Admin,canActivate:[adminGuard],children:[
         {path:"",component:Dashboard},
+        {path:"products",component:Productlist},
         {path:"addproduct",component:Addproduct},
         {path:"editproduct/:id",component:Editproduct}
     ]}
