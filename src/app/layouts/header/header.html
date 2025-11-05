@@ -1,7 +1,32 @@
 <div class="menu">
+    <!-- <ul>
+      @for (menu of menus; track menu.id; let idx = $index;let odd = $odd){
+        @if (odd){
+            <li><a style="color: red;" href="{{menu.url}}">{{menu.name}} vị trí: {{idx}}</a></li>
+        }
+        @else {
+        <li><a style="color: blue" href="{{menu.url}}">{{menu.name}} vị trí: {{idx}}</a></li>
+        }
+    }  
+    </ul> -->
     <ul>
-      @for (menu of menus; track menu.id){
-        <li><a href="{{menu.url}}">{{menu.name}}</a></li>
-      }  
+      @for (menu of menus; track menu.id; let idx = $index;let odd = $odd){
+        @if (menu.parent==0){
+            <li><a href="{{menu.url}}">{{menu.name}}</a></li>
+            <!-- Kiểm tra trong mảng menu xem có cái item nào
+            có parent = id của item hiện tại hay không  -->
+            <ul>
+            @for (submenu of menus;track submenu.id){
+                @if (submenu.parent == menu.id){
+                    <li><a href="{{submenu.url}}">{{submenu.name}}</a></li>
+                }
+            }
+            </ul>
+        }
+    }  
     </ul>
 </div>
+@if (show){
+<div>Hiển thị theo biến show</div>
+}
+
