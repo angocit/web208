@@ -10,5 +10,6 @@ import { Footer } from "./layouts/footer/footer";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('wd20203');
+  // protected readonly title = signal('wd20203');
+  
 }
