@@ -2,8 +2,13 @@
     {{display()}}
     <!-- {{menus}} -->
      <ul>
-     @for (menu of menus; track menu.id;let idx = $index){
-        <li><a href="{{menu.url}}">{{idx+1}}. {{menu.name}}</a></li>
+     @for (menu of menus; track menu.id;let idx = $index;let odd =$odd){
+       @if (odd){
+         <li><a style="color: red;" href="{{menu.url}}">{{idx+1}}. {{menu.name}}</a></li>
+       }
+       @else {
+         <li><a style="color: blue;" href="{{menu.url}}">{{idx+1}}. {{menu.name}}</a></li>
+       }
      }
      </ul>
 
