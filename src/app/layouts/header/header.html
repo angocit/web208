@@ -1,4 +1,15 @@
-<p>
-    {{logo}}
+   <p> {{logo}}</p>
     {{display()}}
-</p>
+    <!-- {{menus}} -->
+     <ul>
+     @for (menu of menus; track menu.id;let idx = $index){
+        <li><a href="{{menu.url}}">{{idx+1}}. {{menu.name}}</a></li>
+     }
+     </ul>
+
+@if (show){
+    <p>Hiển thị nội dung</p>
+}
+@else {
+    <p>Nội dung bị ẩn</p>
+}
