@@ -12,13 +12,15 @@
          @if (menu.parent==0){
             <li>
                 <a style="color: red;" href="{{menu.url}}">{{menu.name}}</a>
-               <ul>
+               @if (isChildrentMenu(menu.id)){
+                <ul>
                     @for(submenu of menus;track submenu.id){
                         @if (submenu.parent==menu.id){
                         <li><a href="{{submenu.url}}">{{submenu.name}}</a></li>
                         }
                     }
                 </ul>
+                }
             </li>
          }
      }

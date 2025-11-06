@@ -55,4 +55,14 @@ export class Header {
       }
     ]
     show:boolean = true 
+    isChildrentMenu(id:number){
+      let check = false 
+      for (let menu of this.menus){
+        if (menu.parent==id){
+          check = true
+          break
+        }
+      }
+      return check
+    }
 }
