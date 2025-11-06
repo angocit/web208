@@ -1,12 +1,20 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from "./layouts/header/header";
+import { Footer } from "./layouts/footer/footer";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styles:`
+    h1{
+      color:blue;
+      font-size: 64px
+    }
+  `
 })
 export class App {
-  protected readonly title = signal('wd20204');
+  // protected readonly title = signal('wd20204');
+  title = "WD20204"
 }
