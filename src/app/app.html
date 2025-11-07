@@ -1,3 +1,16 @@
 <app-header/>
-<h1>Đây là content</h1>
+<div>
+<P>Đây là content  
+</P>
+<button (click)="handleClick()">
+    @if(show){
+    Ẩn
+    }@else {
+        Hiện
+    }
+</button>
+</div>
+@if(show){
+    <h2>Xin chào WD20203</h2>
+}
 <app-footer/>

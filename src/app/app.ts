@@ -11,5 +11,9 @@ import { Footer } from "./layouts/footer/footer";
 })
 export class App {
   // protected readonly title = signal('wd20203');
-  
+  show:boolean = false
+  handleClick=()=>{
+    // alert("Bạn vừa click")
+    this.show = !this.show
+  }
 }
