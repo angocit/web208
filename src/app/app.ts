@@ -17,4 +17,8 @@ import { Footer } from "./layouts/footer/footer";
 export class App {
   // protected readonly title = signal('wd20204');
   title = "WD20204"
+  show:boolean = false
+  handleClick=()=>{
+    this.show= !this.show
+  }
 }
