@@ -26,10 +26,10 @@
     </thead>
     <tbody>
         @for (product of products;track product.id;let i = $index;let even = $even){
-            <tr class="{{(!even)?'red':''}}">
+            <tr [class.red]="even" [style.background]="'blue'">
                 <td>{{i+1}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
+                <td [style.color]="'yellow'">{{product.name}}</td>
+                <td [style]="{color:'red',background:'white'}">{{product.price}}</td>
                 <td><button (click)="handleDelete(product.id)">Xóa</button></td>
             </tr>
         }
