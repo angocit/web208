@@ -13,6 +13,8 @@
 @if(show){
     <h2>Xin chào WD20203</h2>
 }
+<input placeholder="Nhập title" [(ngModel)]= "title"/>
+{{title}}
 <button (click)="LoadProduct()">Tải sản phẩm</button>
 <h1>Danh sách sản phẩm</h1>
 <table>

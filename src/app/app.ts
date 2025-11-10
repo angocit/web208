@@ -2,6 +2,8 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./layouts/header/header";
 import { Footer } from "./layouts/footer/footer";
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 interface IProduct {
   id: number;
   name: string;
@@ -10,7 +12,7 @@ interface IProduct {
 }
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer],
+  imports: [RouterOutlet, Header, Footer,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -18,6 +20,7 @@ export class App {
   // protected readonly title = signal('wd20203');
   show:boolean = false
   products:IProduct[] = []
+  title = "WD20203"
   handleClick=()=>{
     // alert("Bạn vừa click")
     this.show = !this.show
