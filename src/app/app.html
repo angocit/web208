@@ -1,5 +1,7 @@
 <app-header/>
 <div>
+    <input type="text" placeholder="Nhập gì đó" [(ngModel)] = "title"/>
+    <p>Giá trị ô input: {{title}}</p>
 <h1>Nội dung content</h1>
 <button (click)="handleClick()">
    {{(show)?'Hiện':'Ẩn'}}
@@ -10,5 +12,9 @@
 }
 @else {
     <p>Nội dung bị ẩn</p>
+}
+<h1>Danh sách sản phẩm</h1>
+@for (product of products; track product.id){
+    <app-productitem [product]="product"/>
 }
 <app-footer/>
