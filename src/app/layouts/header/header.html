@@ -11,13 +11,13 @@
        } -->
          @if (menu.parent==0){
             <li>
-                <a style="color: red;" href="{{menu.url}}">{{menu.name}}</a>
+                <a [style]="(menu.id%2==1)?{color:'yellow'}:{color:'white'}" [style.background]="'red'" href="{{menu.url}}">{{menu.name}}</a>
                @if (isChildrentMenu(menu.id)){
                 <ul>
-                    @for(submenu of menus;track submenu.id){
+                    @for(submenu of menus;track submenu.id;let subodd = $odd){
                         @if (submenu.parent==menu.id){
-                        <li><a href="{{submenu.url}}">{{submenu.name}}</a></li>
-                        }
+                        <li [class]="subodd?'odd text-[30px]':'even'"><a [class.odd]="subodd" href="{{submenu.url}}">{{submenu.name}}</a></li>
+                      }
                     }
                 </ul>
                 }
