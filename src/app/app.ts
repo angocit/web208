@@ -31,5 +31,7 @@ export class App {
   handleClick=()=>{
     this.show= !this.show
   }
-
+addToCart=(value:string)=>{
+  alert(value);  
+}
 }

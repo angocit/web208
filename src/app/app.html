@@ -15,6 +15,6 @@
 }
 <h1>Danh sách sản phẩm</h1>
 @for (product of products; track product.id){
-    <app-productitem [product]="product"/>
+    <app-productitem [product]="product" (addtocart)="addToCart($event)"/>
 }
 <app-footer/>
