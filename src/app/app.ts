@@ -34,4 +34,7 @@ export class App {
   handleDelete = (id:number)=>{
     this.products = this.products.filter(product=>product.id!=id)
   }
+  AddToCart = (data:number)=>{
+    alert(`ID vừa thêm là: ${data}`)
+  }
 }
