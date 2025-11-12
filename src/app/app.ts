@@ -4,15 +4,12 @@ import { Header } from "./layouts/header/header";
 import { Footer } from "./layouts/footer/footer";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-interface IProduct {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-}
+import { IProduct } from './interface/product';
+import { Productitem } from './components/productitem/productitem';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer,FormsModule],
+  imports: [RouterOutlet, Header, Footer,FormsModule,Productitem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
