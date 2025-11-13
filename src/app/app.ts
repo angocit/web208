@@ -5,10 +5,11 @@ import { Footer } from "./layouts/footer/footer";
 import { FormsModule } from '@angular/forms';
 import { IProduct } from '../interface/product';
 import { Productitem } from './conponents/productitem/productitem';
+import { Slider } from "./components/slider/slider";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer,FormsModule,Productitem],
+  imports: [RouterOutlet, Header, Footer, FormsModule, Productitem, Slider],
   templateUrl: './app.html',
   styles:`
     h1{

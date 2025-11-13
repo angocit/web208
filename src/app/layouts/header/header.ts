@@ -15,7 +15,7 @@ export class Header {
     logo:string = "WD20204"
     display(){
       return `Xin chào ${this.logo}`
-    }
+    }    
     menus:IMenu[] = [
       {
         id:1,
@@ -64,5 +64,8 @@ export class Header {
         }
       }
       return check
+    }
+    HideTopbar = ()=>{
+      this.show = false
     }
 }
