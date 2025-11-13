@@ -1,21 +1,11 @@
 <app-header/>
 <app-slider/>
-<div>
-    <input type="text" placeholder="Nhập gì đó" [(ngModel)] = "title"/>
-    <p>Giá trị ô input: {{title}}</p>
-<h1>Nội dung content</h1>
-<button (click)="handleClick()">
-   {{(show)?'Hiện':'Ẩn'}}
-</button>
-</div>
-@if (show){
-    <p>Nội dung được hiển thị</p>
-}
-@else {
-    <p>Nội dung bị ẩn</p>
-}
+<div class="max-w-7xl mx-auto">
 <h1>Danh sách sản phẩm</h1>
+<div class="grid grid-cols-4 gap-5">
 @for (product of products; track product.id){
-    <app-productitem [product]="product" (addtocart)="addToCart($event)"/>
+    <app-productitem [product]="product"/>
 }
+</div>
+</div>
 <app-footer/>

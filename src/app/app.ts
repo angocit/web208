@@ -19,20 +19,13 @@ import { Slider } from "./components/slider/slider";
   `
 })
 export class App {
-  // protected readonly title = signal('wd20204');
-  title = "WD20204"
-  show:boolean = false
-  products:IProduct[]=[
-		{ id: 1, name: "Áo thun basic", image: "images/ao-thun.jpg", price: 199000 },
-		{ id: 2, name: "Quần jeans xanh", image: "images/quan-jeans.jpg", price: 349000 },
-		{ id: 3, name: "Giày sneakers", image: "images/giay-sneakers.jpg", price: 599000 },
-		{ id: 4, name: "Mũ lưỡi trai", image: "images/mu-luoi-trai.jpg", price: 129000 },
-		{ id: 5, name: "Áo khoác denim", image: "images/ao-khoac-denim.jpg", price: 799000}
-	]
-  handleClick=()=>{
-    this.show= !this.show
-  }
-addToCart=(value:string)=>{
-  alert(value);  
-}
+    products:IProduct[] = []
+    async ngOnInit(){
+        try {
+           const res = await fetch("http://localhost:3000/products")
+           this.products = await res.json()
+        } catch (error) {
+            console.log(error);            
+        }
+    }
 }

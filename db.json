@@ -1,9 +1,9 @@
 {
 	"products": [
-		{ "id": 1, "name": "Áo thun basic", "image": "images/ao-thun.jpg", "price": 199000 },
-		{ "id": 2, "name": "Quần jeans xanh", "image": "images/quan-jeans.jpg", "price": 349000 },
-		{ "id": 3, "name": "Giày sneakers", "image": "images/giay-sneakers.jpg", "price": 599000 },
-		{ "id": 4, "name": "Mũ lưỡi trai", "image": "images/mu-luoi-trai.jpg", "price": 129000 },
-		{ "id": 5, "name": "Áo khoác denim", "image": "images/ao-khoac-denim.jpg", "price": 799000 }
+		{ "id": 1, "name": "Áo thun basic", "image": "https://down-vn.img.susercontent.com/file/c7db377b177fc8e2ff75a769022dcc23", "price": 199000 },
+		{ "id": 2, "name": "Quần jeans xanh", "image": "https://bizweb.dktcdn.net/100/399/392/articles/132545.jpg?v=1614844183780", "price": 349000 },
+		{ "id": 3, "name": "Giày sneakers", "image": "https://zerdio.com.vn/wp-content/uploads/2024/03/shop-quan-ao-cho-trung-nien.jpg", "price": 599000 },
+		{ "id": 4, "name": "Mũ lưỡi trai", "image": "https://hoyang.vn/wp-content/uploads/2021/03/set-quan-ao-dep.jpg", "price": 129000 },
+		{ "id": 5, "name": "Áo khoác denim", "image": "https://down-vn.img.susercontent.com/file/vn-11134208-7qukw-ljqjtknkxzia10", "price": 799000 }
 	]
 }
