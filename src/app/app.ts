@@ -15,6 +15,11 @@ import { Productitem } from './components/productitem/productitem';
 })
 export class App {
   // protected readonly title = signal('wd20203');
+  constructor(){
+    // this.LoadProduct()
+    console.log("COnstructor");
+    
+  }
   show:boolean = false
   products:IProduct[] = []
   title = "WD20203"
@@ -30,6 +35,9 @@ export class App {
     } catch (error) {
         console.log(error);        
     }
+  }
+  ngOnInit(){
+    this.LoadProduct()
   }
   handleDelete = (id:number)=>{
     this.products = this.products.filter(product=>product.id!=id)
