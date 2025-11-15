@@ -1,11 +1,1 @@
-<app-header/>
-<app-slider/>
-<div class="max-w-7xl mx-auto">
-<h1>Danh sách sản phẩm</h1>
-<div class="grid grid-cols-4 gap-5">
-@for (product of products; track product.id){
-    <app-productitem [product]="product"/>
-}
-</div>
-</div>
-<app-footer/>
+<router-outlet/>
