@@ -7,7 +7,7 @@ import { Detailproduct } from './pages/detailproduct/detailproduct';
 export const routes: Routes = [
     {path:'',component:Clientlayout,children:[
         {path:'',component:Home},
-        {path:'detail',component:Detailproduct}
+        {path:'detail/:id',component:Detailproduct}
     ]},
     {path:'admin',component:Adminlayout}
 ];
