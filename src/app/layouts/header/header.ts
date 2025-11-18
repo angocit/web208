@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterModule } from "@angular/router";
 interface IMenu{
   id:number,
   name:string,
@@ -7,7 +8,7 @@ interface IMenu{
 }
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink,RouterModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -32,7 +33,7 @@ export class Header {
       {
         id:3,
         name:"Liên hệ",
-        url:"/contact",
+        url:"/detail/2",
         parent:0
       },
       {
@@ -52,6 +53,12 @@ export class Header {
         name:"Phụ kiện",
         url:"/phu-kien",
         parent:2
+      },
+      {
+        id:7,
+        name:"Chi tiết",
+        url:"/detail/1",
+        parent:0
       }
     ]
     show:boolean = true 

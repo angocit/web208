@@ -17,7 +17,7 @@
         <ul class="flex w-full">
           @for (menu of menus; track menu.id;let idx = $index;let odd =$odd){ @if (menu.parent==0){
           <li>
-            <a class="py-5 block px-4" href="{{ menu.url }}">{{ menu.name }}</a>
+            <a class="py-5 block px-4" href="" [routerLink]="[menu.url]" [routerLinkActive]="(menu.url!=='/')?'bg-[#ccc]':''">{{ menu.name }}</a>
             @if (isChildrentMenu(menu.id)){
             <ul>
               @for(submenu of menus;track submenu.id;let subodd = $odd){ @if
