@@ -1,0 +1,13 @@
+<h1>Sửa sản phẩm</h1>
+<form [formGroup]="productFrm" (ngSubmit)="handleSubmit()">
+    <input type="text" placeholder="Tên sản phẩm" formControlName ="name"/>
+    @if (!productFrm.controls.name.valid&&(productFrm.controls.name.dirty||productFrm.controls.name.touched)){
+        <span class="text-red-600 text-[12px]">Tên không để trống và > 6 kí tự</span>
+    }
+    <input type="text" placeholder="Ảnh sản phẩm" formControlName ="image"/>
+    @if (!productFrm.controls.image.valid&&(productFrm.controls.image.dirty||productFrm.controls.image.touched)){
+        <span class="text-red-600 text-[12px]">Ảnh không để trống</span>
+    }
+    <input type="text" placeholder="Giá sản phẩm" formControlName ="price"/>
+    <button type="submit">Sửa sản phẩm</button>
+</form>
