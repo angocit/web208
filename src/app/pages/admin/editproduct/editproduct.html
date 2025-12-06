@@ -1,0 +1,30 @@
+<h1 class="text-center text-2xl uppercase mb-5">Sửa sản phẩm</h1>
+<form class="flex flex-col gap-4 [&_input]:border [&_input]:border-[#ccc]" [formGroup]="productfrm" (ngSubmit)="handleSubmit()">
+    <label class="flex gap-4">Tên sản phẩm:<input type="text" placeholder="Tên sản phẩm" formControlName ="name"/>
+    </label>
+    @if (!productfrm.controls.name.valid&&(productfrm.controls.name.dirty||productfrm.controls.name.touched)){
+        <span class="text-red-600 text-[12px]">Tên sản phẩm không để trống</span>
+    }
+    <label class="flex gap-4">Danh mục:
+        <select formControlName ="category">
+        <option value="1">Quần Áo</option>
+        <option value="2">Giày dép</option>
+        <option value="3">Phụ kiện</option>
+    </select>
+    </label>
+    <label class="flex gap-4">Ảnh:
+    <input type="text" placeholder="Ảnh" formControlName="image"/>
+    </label>
+    @if (!productfrm.controls.image.valid&&(productfrm.controls.image.dirty||productfrm.controls.image.touched)){
+        <span class="text-red-600 text-[12px]">Ảnh sản phẩm không để trống</span>
+    }
+    <label class="flex gap-4">Giá tiền:
+    <input type="number" placeholder="0" formControlName="price"/>
+    </label>
+    @if (!productfrm.controls.price.valid&&(productfrm.controls.price.dirty||productfrm.controls.price.touched)){
+        <span class="text-red-600 text-[12px]">Giá không để trống và >=1000</span>
+    }
+    <div class="submit">
+    <button class="cursor-pointer bg-blue-800 text-white px-5 py-2 rounded" type="submit">Cập nhật</button>
+    </div>
+</form>

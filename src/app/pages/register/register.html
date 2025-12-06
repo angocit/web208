@@ -1,0 +1,12 @@
+<h1>Đăng ký tài khoản</h1>
+<form [formGroup]="userfrm" (ngSubmit)="handleSubmit()">
+    <input placeholder="Email" type="text" formControlName="email"/>
+    @if (!userfrm.controls.email.valid&&(userfrm.controls.email.dirty||userfrm.controls.email.touched)){
+        <span class="text-red-600 text-[12px]">Email không đúng định dạng</span>
+    }
+    <input placeholder="Mật khẩu" type="password" formControlName ="password"/>
+    @if (!userfrm.controls.password.valid&&(userfrm.controls.password.dirty||userfrm.controls.password.touched)){
+        <span class="text-red-600 text-[12px]">Mật khẩu ít nhất 6 kí tự</span>
+    }
+    <button type="submit">Đăng ký</button>
+</form>
