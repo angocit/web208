@@ -1,0 +1,18 @@
+
+<form class="max-w-sm mx-auto" [formGroup]="userfrm" (ngSubmit)="handleSubmit()">
+  <div class="mb-5">
+    <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+    <input formControlName="email" type="text" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Email"/>
+    @if (!userfrm.controls.email.valid&&(userfrm.controls.email.dirty||userfrm.controls.email.touched)){
+        <span>Email phải đúng định dạng</span>
+    }
+</div>
+  <div class="mb-5">
+    <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Mật khẩu</label>
+    <input formControlName="password" type="text" id="password" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Mật khẩu"/>
+   @if (!userfrm.controls.password.valid&&(userfrm.controls.password.dirty||userfrm.controls.password.touched)){
+        <span>Mật khẩu phải từ 6 kí tự</span>
+    }
+</div>
+  <button type="submit" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
+</form>

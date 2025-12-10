@@ -1,0 +1,39 @@
+<nz-layout>
+      <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo text-white font-bold text-center">BASE WEB2081</div>
+        <ul nz-menu nzTheme="dark" nzMode="inline">
+            
+          <li nz-submenu nzTitle="Quản lý sinh viên" nzIcon="product" nzOpen>
+            <ul>
+              <li nz-menu-item><a href="/admin/students">Danh sách</a></li>
+              <li nz-menu-item><a href="/admin/students/add">Thêm mới</a></li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Quản lý ngừi dùng" nzIcon="team">
+            <ul>
+              <li nz-menu-item><a href="#">Thông tin</a></li>
+              <li nz-menu-item><a href="#">Đổi mật khẩu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header>
+          <nz-icon
+            class="trigger"
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          />
+        </nz-header>
+        <nz-content>
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>User</nz-breadcrumb-item>
+            <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+          </nz-breadcrumb>
+          <div class="inner-content">
+            <router-outlet/>
+          </div>
+        </nz-content>
+        <nz-footer>Ngocnv34</nz-footer>
+      </nz-layout>
+    </nz-layout>

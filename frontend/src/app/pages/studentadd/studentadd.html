@@ -1,0 +1,26 @@
+
+<form class="max-w-sm mx-auto" [formGroup]="studentfrm" (ngSubmit)="handleSubmit()">
+  <div class="mb-5">
+    <label for="name" class="block mb-2.5 text-sm font-medium text-heading">Tên</label>
+    <input formControlName="name" type="text" id="name" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Tên sv"/>
+    @if (!studentfrm.controls.name.valid&&(studentfrm.controls.name.dirty||studentfrm.controls.name.touched)){
+        <span>Tên không để trống và >= 6 kí tự</span>
+    }
+    </div>
+  <div class="mb-5">
+    <label for="age" class="block mb-2.5 text-sm font-medium text-heading">Tuổi</label>
+    <input formControlName="age" type="text" id="age" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Tuổi sv"/>
+    @if (!studentfrm.controls.age.valid&&(studentfrm.controls.age.dirty||studentfrm.controls.age.touched)){
+        <span>Tuổi không âm</span>
+    }
+    </div>
+  <div class="mb-5">
+    <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+    <input formControlName="email" type="text" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="Email"/>
+    </div>
+  <div class="mb-5">
+    <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">SĐT</label>
+    <input formControlName="phone" type="text" id="phone" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="SĐT"/>
+    </div>
+  <button type="submit" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Submit</button>
+</form>
