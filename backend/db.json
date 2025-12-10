@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "name": "Ngọc Ngô update",
+      "age": 18,
+      "email": "angocit@gmail.com",
+      "phone": "02255555",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$sWH8i47vMO.BQN40xXrnF.42F4OxYfllusomqF2ur0cZA.Y97KJQG",
+      "id": 1
+    }
+  ]
+}
