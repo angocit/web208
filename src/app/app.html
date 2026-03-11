@@ -1,3 +1,10 @@
 <app-header/>
-<h2>Đây là vị trí content</h2>
-<h2>Đây là vị trí footer</h2>
+<h2 [class.active]="show">{{title}}</h2>
+<h2 [class]="[name,'font-bold']">Đây là vị trí footer</h2>
+<button (click)="handleClick()">Thay đổi trạng thái</button>
+<h1>Phần 2. Style</h1>0
+<h2 [style]="{'background':background,'color':'white'}">Hiển thị style</h2>
+<h2 [style.background]="background">Hiển thị style theo thuộc tính</h2>
+<h1>Phần 3. Tương tác 2 chiều</h1>
+<input type="text" placeholder="Nhập gì đó vào đây" [(ngModel)]="keywords"/>
+Gía trị thay đổi theo input: {{keywords}}
