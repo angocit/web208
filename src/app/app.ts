@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header],
+  imports: [RouterOutlet,Header,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,6 +15,7 @@ export class App {
   classname:string = "text-red"
   fontweight:string = 'font-bold'
   show:boolean = true
+  color:string = 'red'
   handleClick=()=>{
     // alert("Ahihihi")
     this.classname = (this.classname=='text-red')?"text-blue":'text-red'

@@ -4,5 +4,10 @@
 <h3 [class] = "classname" class="title">Thuộc tính class</h3>
 <h3 [class] = "[classname,'text',fontweight]">Nhiều class</h3>
 <h3 [class.active] = "show">Hiển thị class phụ thuộc biến</h3>
+<p>Style</p>
+<h3 [style] = "{'background':color,'color':'white'}" class="title">Thuộc tính style</h3>
+<h3 [style.background] = "color" class="title">Gán giá trị  cho thuộc tính style</h3>
 <h2>Phần 2. Sự kiện</h2>
 <button (click)="handleClick()">Thay đổi trạng thái</button>
+<h2>Phần 3. Tương tác 2 chiều (two way binding)</h2>
+<input type="text" placeholder="Nhập gì đó" [(ngModel)]="title"/>
