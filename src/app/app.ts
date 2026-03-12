@@ -16,9 +16,15 @@ export class App {
   fontweight:string = 'font-bold'
   show:boolean = true
   color:string = 'red'
+  chieudai:number = 0
+  chieurong:number = 0
+  dientich:number = 0
   handleClick=()=>{
     // alert("Ahihihi")
     this.classname = (this.classname=='text-red')?"text-blue":'text-red'
     this.show = !this.show
+  }
+  Caculator = ()=>{
+    this.dientich = this.chieudai*this.chieurong
   }
 }

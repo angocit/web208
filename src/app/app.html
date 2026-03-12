@@ -11,3 +11,14 @@
 <button (click)="handleClick()">Thay đổi trạng thái</button>
 <h2>Phần 3. Tương tác 2 chiều (two way binding)</h2>
 <input type="text" placeholder="Nhập gì đó" [(ngModel)]="title"/>
+<h2>Ứng dụng. Tạo chương trình tính diện tích hình chữ nhật</h2>
+<label> Chiều dài
+<input type="number" min="1" [(ngModel)] ="chieudai"/>
+</label>
+<label> Chiều rộng
+<input type="number" min="1" [(ngModel)] ="chieurong"/>
+</label>
+<button (click)="Caculator()">Tính</button>
+<label> Diện tích
+<input type="number" min="1" [(ngModel)] ="dientich"/>
+</label>
