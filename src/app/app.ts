@@ -12,8 +12,11 @@ export class App {
   // protected readonly title = signal('wd20307');
   title:string = 'Xin chào WD20307 - Ahihih'
   classname:string = "text-red"
+  fontweight:string = 'font-bold'
+  show:boolean = true
   handleClick=()=>{
     // alert("Ahihihi")
-    this.classname = "text-blue"
+    this.classname = (this.classname=='text-red')?"text-blue":'text-red'
+    this.show = !this.show
   }
 }
