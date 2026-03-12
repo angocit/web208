@@ -9,5 +9,11 @@ import { Header } from './components/header/header';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('wd20307');
+  // protected readonly title = signal('wd20307');
+  title:string = 'Xin chào WD20307 - Ahihih'
+  classname:string = "text-red"
+  handleClick=()=>{
+    // alert("Ahihihi")
+    this.classname = "text-blue"
+  }
 }
