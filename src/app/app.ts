@@ -3,7 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
 import { FormsModule } from '@angular/forms';
-
+interface ITodo{
+  name:string;
+  priority:string
+}
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header,FormsModule],
@@ -17,6 +20,16 @@ export class App {
   show:boolean = false
   background:string = 'yellow'
   keywords:string = 'Từ khóa'
+  todos:ITodo[]= [
+    {
+      name:"Đi học",
+      priority:"Cao"
+    },
+    {
+      name:"Đi làm thêm",
+      priority:"Trung bình"
+    }
+  ]
   handleClick = ()=>{
     this.name = 'ahihihi'
     // this.show = true
