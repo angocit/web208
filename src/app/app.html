@@ -15,14 +15,24 @@ Gía trị thay đổi theo input: {{keywords}}
 @else {
     <p>Tạm biệt WD20309</p>
 }
+<input type="text" placeholder="Tên CV" [(ngModel)]="name"/>
+<input type="text" placeholder="Độ ưu tiên" [(ngModel)]="priority"/>
+<button (click)="addTodos()">Thêm</button>
 <h1>Danh sách công việc</h1>
 <ul>
-@for (item of todos; let i = $index;let even = $even;track item.name;) {
-    @if (even){
-<li [style.color] = "'blue'">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
+@for (item of todos; let i = $index;let even = $even;let isFirst =$first;let isLast = $last; track item.name;) {
+    <!-- @if (isFirst){
+<li [style.font-weight] = "'bold'">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
     }
     @else{
-        <li [style.color] = "'red'">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
+        <li>{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
     }
+    @if (isLast){
+<li [style.font-style] = "'italic'">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
+    }
+    @else{
+        <li>{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
+    } -->
+         <li [style.font-weight]="isFirst?'bold':''" [style.font-style]="isLast?'italic':''">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
 }
 </ul>

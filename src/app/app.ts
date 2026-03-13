@@ -16,10 +16,12 @@ interface ITodo{
 export class App {
   // protected readonly title = signal('wd20309');
   title:string = 'Xin chào WD20309'
-  name:string='text-red'
+  // name:string='text-red'
   show:boolean = false
   background:string = 'yellow'
   keywords:string = 'Từ khóa'
+  name:string = ''
+  priority:string = ''
   todos:ITodo[]= [
     {
       name:"Đi học",
@@ -44,5 +46,15 @@ export class App {
   }
   handleShowHide = ()=>{
       this.show = !this.show
+  }
+  addTodos =()=>{
+     const newtodo:ITodo = {
+      name:this.name,
+      priority:this.priority
+     }
+    //  console.log(newtodo);
+     this.todos.push(newtodo)
+     this.name=''
+     this.priority=''
   }
 }
