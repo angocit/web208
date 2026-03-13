@@ -8,3 +8,10 @@
 <h1>Phần 3. Tương tác 2 chiều</h1>
 <input type="text" placeholder="Nhập gì đó vào đây" [(ngModel)]="keywords"/>
 Gía trị thay đổi theo input: {{keywords}}
+<button (click)="handleShowHide()">Ẩn/Hiện</button>
+@if (show){
+    <p>Xin chào WD20309</p>
+}
+@else {
+    <p>Tạm biệt WD20309</p>
+}

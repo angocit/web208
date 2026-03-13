@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class App {
   // protected readonly title = signal('wd20309');
   title:string = 'Xin chào WD20309'
-  name='text-red'
+  name:string='text-red'
   show:boolean = false
   background:string = 'yellow'
   keywords:string = 'Từ khóa'
@@ -26,7 +26,10 @@ export class App {
     // else {
     //   this.show=true
     // }
-    this.show = !this.show
+    // this.show = !this.show
     this.background = 'blue'
+  }
+  handleShowHide = ()=>{
+      this.show = !this.show
   }
 }
