@@ -2,7 +2,10 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { FormsModule } from '@angular/forms';
-
+interface ITodo{
+  name:string;
+  priority:string
+}
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,Header,FormsModule],
@@ -19,6 +22,20 @@ export class App {
   chieudai:number = 0
   chieurong:number = 0
   dientich:number = 0
+  todos:ITodo[]=[
+    {
+      name:"Đi học",
+      priority:"Cao"
+    },
+    {
+      name:"Đi làm",
+      priority:"Trung bình"
+    },
+    {
+      name:"Tán gái",
+      priority:"Trung bình"
+    }
+  ]
   handleClick=()=>{
     // alert("Ahihihi")
     this.classname = (this.classname=='text-red')?"text-blue":'text-red'
@@ -26,5 +43,8 @@ export class App {
   }
   Caculator = ()=>{
     this.dientich = this.chieudai*this.chieurong
+  }
+  onChange =()=>{
+    this.show = !this.show
   }
 }
