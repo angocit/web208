@@ -30,14 +30,17 @@
     <h2>Tạm biết WD20307</h2>
 }
 <button (click)="onChange()">Thay đổi</button>
+<input type="text" placeholder="tên cv" [(ngModel)]="name"/>
+<input type="text" placeholder="Ưu tiên" [(ngModel)]="priority"/>
+<button (click)="onAddTodo()">Thêm</button>
 <h1>Danh sách công việc cần làm</h1>
 <ul>
-    @for (todo of todos; track $index;let i=$index;let e=$even) {
+    @for (todo of todos; track $index;let i=$index;let e=$even;let first = $first;let last = $last) {
         @if(e){
-            <li [style.color]="'blue'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li>
+            <li [style.font-weight]="(first)?'bold':''" [style.font-style]="(last)?'italic':''" [style.color]="'blue'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li>
         }
         @else{
-            <li [style.color]="'red'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li>
+            <li [style.font-weight]="(first)?'bold':''" [style.font-style]="(last)?'italic':''" [style.color]="'red'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li>
         }
     }
 </ul>

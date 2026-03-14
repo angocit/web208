@@ -22,6 +22,8 @@ export class App {
   chieudai:number = 0
   chieurong:number = 0
   dientich:number = 0
+  name:string = ''
+  priority:string = ''
   todos:ITodo[]=[
     {
       name:"Đi học",
@@ -46,5 +48,14 @@ export class App {
   }
   onChange =()=>{
     this.show = !this.show
+  }
+  onAddTodo =()=>{
+    const newtodo:ITodo = {
+      name:this.name,
+      priority:this.priority
+    }
+    this.todos.push(newtodo)
+    this.name=''
+    this.priority=''
   }
 }
