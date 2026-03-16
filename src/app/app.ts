@@ -3,13 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
 import { FormsModule } from '@angular/forms';
-interface ITodo{
-  name:string;
-  priority:string
-}
+import { ITodo } from './interfaces/todo';
+import { Todoitem } from './components/todoitem/todoitem';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header,FormsModule],
+  imports: [RouterOutlet, Header,FormsModule,Todoitem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

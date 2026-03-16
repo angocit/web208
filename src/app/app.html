@@ -19,7 +19,7 @@ Gía trị thay đổi theo input: {{keywords}}
 <input type="text" placeholder="Độ ưu tiên" [(ngModel)]="priority"/>
 <button (click)="addTodos()">Thêm</button>
 <h1>Danh sách công việc</h1>
-<ul>
+<div>
 @for (item of todos; let i = $index;let even = $even;let isFirst =$first;let isLast = $last; track item.name;) {
     <!-- @if (isFirst){
 <li [style.font-weight] = "'bold'">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
@@ -33,6 +33,6 @@ Gía trị thay đổi theo input: {{keywords}}
     @else{
         <li>{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
     } -->
-         <li [style.font-weight]="isFirst?'bold':''" [style.font-style]="isLast?'italic':''">{{i+1}}. {{item.name}} - Độ ưu tiên: {{item.priority}}</li>
+    <app-todoitem [todo]="item" [isFirst]="isFirst" [isLast]="isLast" [index]="i"/>
 }
-</ul>
+</div>
