@@ -20,6 +20,7 @@ export class App {
   background:string = 'yellow'
   keywords:string = 'Từ khóa'
   name:string = ''
+  message:string = ''
   priority:string = ''
   todos:ITodo[]= [
     {
@@ -55,5 +56,8 @@ export class App {
      this.todos.push(newtodo)
      this.name=''
      this.priority=''
+  }
+  CurrentName =(text:string)=>{
+    this.message = text
   }
 }

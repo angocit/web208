@@ -1,1 +1,3 @@
-<p [style.font-weight]="todoinfo.isFirst?'bold':''" [style.font-style]="todoinfo.isLast?'italic':''">{{todoinfo.index+1}}. {{todoinfo.todo.name}} - Độ ưu tiên: {{todoinfo.todo.priority}}</p>
+<p [style.font-weight]="todoinfo.isFirst?'bold':''" [style.font-style]="todoinfo.isLast?'italic':''">{{todoinfo.index+1}}. {{todoinfo.todo.name}} - Độ ưu tiên: {{todoinfo.todo.priority}}
+    <button (click)="handleClick(todoinfo.todo.name)">Chọn</button>
+</p>
