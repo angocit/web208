@@ -2,13 +2,12 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { FormsModule } from '@angular/forms';
-interface ITodo{
-  name:string;
-  priority:string
-}
+import { ITodo } from './interface/todo';
+import { Todoitem } from './components/todoitem/todoitem';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,FormsModule],
+  imports: [RouterOutlet,Header,FormsModule,Todoitem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
