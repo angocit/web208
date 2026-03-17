@@ -43,6 +43,6 @@
             <li [style.font-weight]="(first)?'bold':''" [style.font-style]="(last)?'italic':''" [style.color]="'red'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li>
         } -->
             <!-- <li [style.font-weight]="(first)?'bold':''" [style.font-style]="(last)?'italic':''" [style.color]="(e)?'blue':'red'">STT: {{i+1}}. {{todo.name}} - Độ ưu tiên: {{todo.priority}}</li> -->
-        <app-todoitem [todo]="todo" [first]="first" [last]="last" [even]="e" [index]="i"/>     
+        <app-todoitem [todoInfo]="{todo:todo,last:last,first:first,even:e,index:i}"/>     
     }
 </div>

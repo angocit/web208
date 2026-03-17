@@ -1,6 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { ITodo } from '../../interface/todo';
-
+type TTodo = {
+  todo:ITodo,
+  first:boolean,
+  last:boolean,
+  index:number,
+  even:boolean
+}
 @Component({
   selector: 'app-todoitem',
   imports: [],
@@ -8,9 +14,5 @@ import { ITodo } from '../../interface/todo';
   styleUrl: './todoitem.css',
 })
 export class Todoitem {
-  @Input() todo:ITodo = {} as ITodo
-  @Input() first:boolean = true
-  @Input() last:boolean = true
-  @Input() index:number = 0
-  @Input() even:boolean = true 
+  @Input() todoInfo:TTodo = {} as TTodo
 }
