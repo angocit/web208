@@ -4,6 +4,7 @@ import { Header } from './components/header/header';
 import { FormsModule } from '@angular/forms';
 import { ITodo } from './interface/todo';
 import { Todoitem } from './components/todoitem/todoitem';
+import { IPost } from './interface/post';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class App {
   name:string = ''
   priority:string = ''
   message:string = ''
+  posts:IPost[] = []
   todos:ITodo[]=[
     {
       name:"Đi học",
@@ -60,5 +62,9 @@ export class App {
   }
   ChooseFn = (text:string)=>{
     this.message = text
+  }
+  async ngOnInit(){
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      this.posts = await res.json()
   }
 }
