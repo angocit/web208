@@ -23,6 +23,7 @@ export class App {
   dientich:number = 0
   name:string = ''
   priority:string = ''
+  message:string = ''
   todos:ITodo[]=[
     {
       name:"Đi học",
@@ -56,5 +57,8 @@ export class App {
     this.todos.push(newtodo)
     this.name=''
     this.priority=''
+  }
+  ChooseFn = (text:string)=>{
+    this.message = text
   }
 }

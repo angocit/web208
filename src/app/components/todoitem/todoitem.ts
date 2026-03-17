@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITodo } from '../../interface/todo';
 type TTodo = {
   todo:ITodo,
@@ -15,4 +15,8 @@ type TTodo = {
 })
 export class Todoitem {
   @Input() todoInfo:TTodo = {} as TTodo
+  @Output() handleclick:EventEmitter<string> = new EventEmitter()
+  onClick = (name:string)=>{
+      this.handleclick.emit(name)
+  }
 }
