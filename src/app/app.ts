@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { NgClass } from "../../node_modules/@angular/common/types/_common_module-chunk";
 import { FormsModule } from '@angular/forms';
 import { ITodo } from './interfaces/todo';
 import { Todoitem } from './components/todoitem/todoitem';
+import type { IPost } from './interfaces/post';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { Todoitem } from './components/todoitem/todoitem';
 export class App {
   // protected readonly title = signal('wd20309');
   title:string = 'Xin chào WD20309'
+  changedt = inject(ChangeDetectorRef)
   // name:string='text-red'
   show:boolean = false
   background:string = 'yellow'
@@ -22,6 +24,7 @@ export class App {
   name:string = ''
   message:string = ''
   priority:string = ''
+  posts:IPost[] = []
   todos:ITodo[]= [
     {
       name:"Đi học",
@@ -59,5 +62,14 @@ export class App {
   }
   CurrentName =(text:string)=>{
     this.message = text
+  }
+  async ngOnInit(){
+     try {
+        const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
+        this.posts = await res.json()
+        this.changedt.markForCheck()
+     } catch (error) {
+      
+     }
   }
 }
