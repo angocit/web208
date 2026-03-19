@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { IPost } from './interface/post';
   styleUrl: './app.css'
 })
 export class App {
+  changedt = inject(ChangeDetectorRef)
   // protected readonly title = signal('wd20307');
   title:string = 'Xin chào WD20307 - Ahihih'
   classname:string = "text-red"
@@ -66,5 +67,6 @@ export class App {
   async ngOnInit(){
       const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
       this.posts = await res.json()
+      this.changedt.markForCheck()
   }
 }
