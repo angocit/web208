@@ -1,1 +1,43 @@
-<p>header works!</p>
+<header class="shadow-sm">
+    <div class="top-header bg-black text-white text-center">
+        <div class="max-w-7xl mx-auto relative py-1">
+            <span>Sign up and get 20% off to your first order. Sign Up Now</span>
+            <button class="text-white absolute right-0 top-1">
+                <img src="/images/close.svg"/>
+            </button>
+        </div>
+    </div>
+    <div class="bot-header">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="left flex gap-10 tems-center">
+                <a href="/"><img src="/images/logo.svg"/></a>
+                <nav>
+                    <ul class="flex gap-6">
+                        <li>
+                            <a href="#">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#">On Sale</a>
+                        </li>
+                        <li>
+                            <a href="#">New Arrivals</a>
+                        </li>
+                        <li>
+                            <a href="#">Brands</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right flex gap-4 tems-center">
+                <form class="flex items-center relative">
+                    <button class="absolute left-2 top-6"><img src="/images/search.svg"/></button>
+                    <input class="outline-0 bg-[#F0F0F0] pl-10 w-[550px] border border-[#ccc] rounded-4xl py-2 pr-6" type="text" placeholder="Search for products..."/>
+                </form>
+                <div class="flex tems-center [&_a]:py-6 gap-5">
+                    <a href="#"><img src="/images/cart.svg"/></a>
+                    <a href="#"><img src="/images/user.svg"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
