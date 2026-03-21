@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { ITodo } from './interface/todo';
 import { Todoitem } from './components/todoitem/todoitem';
 import { IPost } from './interface/post';
+import { Numberitem } from "./components/numberitem/numberitem";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,FormsModule,Todoitem],
+  imports: [RouterOutlet, Header, FormsModule, Todoitem, Numberitem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -26,6 +27,7 @@ export class App {
   name:string = ''
   priority:string = ''
   message:string = ''
+  number:number = 1
   posts:IPost[] = []
   todos:ITodo[]=[
     {
@@ -68,5 +70,8 @@ export class App {
       const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
       this.posts = await res.json()
       this.changedt.markForCheck()
+  }
+  SetNumber =(value:number)=>{
+    this.number=value
   }
 }
