@@ -1,5 +1,5 @@
 <nz-layout>
-      <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+      <nz-sider class="h-[100vh]" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
         <div class="logo"></div>
         <ul nz-menu nzTheme="dark" nzMode="inline">
           <li nz-submenu nzTitle="User" nzIcon="user">
@@ -9,10 +9,14 @@
               <li nz-menu-item>Alex</li>
             </ul>
           </li>
-          <li nz-submenu nzTitle="Team" nzIcon="team">
+          <li nz-submenu nzTitle="Quản lý sản phẩm" nzIcon="team">
             <ul>
-              <li nz-menu-item>Team 1</li>
-              <li nz-menu-item>Team 2</li>
+              <li nz-menu-item>
+                <a [routerLink]="'/admin/products'"> Danh sách sản phẩm</a>
+            </li>
+              <li nz-menu-item>
+                 <a [routerLink]="['/admin/products/edit',1]">Sửa sản phẩm</a>
+            </li>
             </ul>
           </li>
           <li nz-menu-item>
