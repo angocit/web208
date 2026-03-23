@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IProduct } from '../../../interfaces/product';
 import { RouterLink } from "@angular/router";
 
@@ -10,8 +10,10 @@ import { RouterLink } from "@angular/router";
 })
 export class Productlist {
   products:IProduct[] = []
+  cdr = inject(ChangeDetectorRef)
   async ngOnInit(){
       const res = await fetch('http://localhost:3000/products')
       this.products = await res.json()
+      this.cdr.markForCheck()
   }
 }

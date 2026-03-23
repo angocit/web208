@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../interfaces/product';
 
@@ -11,9 +11,11 @@ import { IProduct } from '../../../interfaces/product';
 export class Productdetail {
   route = inject(ActivatedRoute)
   product:IProduct = {} as IProduct
+  cdr = inject(ChangeDetectorRef)
   async ngOnInit(){
     const id = this.route.snapshot.params['id']
       const res = await fetch(`http://localhost:3000/products/${id}`)
       this.product = await res.json()
+      this.cdr.markForCheck()
   }
 }
