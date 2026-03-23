@@ -6,6 +6,7 @@ import { Detail } from './pages/detail/detail';
 import { Productlist } from './pages/admin/productlist/productlist';
 import { Productadd } from './pages/admin/productadd/productadd';
 import { Productedit } from './pages/admin/productedit/productedit';
+import { Productdetail } from './pages/admin/productdetail/productdetail';
 
 export const routes: Routes = [
     {path:'',component:Client,children:[
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path:'admin',component:Admin, children:[
         {path:'products',component:Productlist},
         {path:'products/add',component:Productadd},
+        {path:'products/:id',component:Productdetail},
         {path:'products/edit/:id',component:Productedit}
     ]}
 ];
