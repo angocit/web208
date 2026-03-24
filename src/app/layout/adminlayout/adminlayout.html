@@ -10,6 +10,9 @@
               <li nz-menu-item>
                 <a [routerLink]="['/admin','products','add']">Thêm mới</a>
               </li>
+              <li nz-menu-item>
+                <a [routerLink]="['/admin/products']" [queryParams]="{'keyword':'abc'}">Tìm kiếm</a>
+              </li>
             </ul>
           </li>
           <li nz-submenu nzTitle="Team" nzIcon="team">
