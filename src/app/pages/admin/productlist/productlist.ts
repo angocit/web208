@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IProduct } from '../../../interfaces/product';
 import { RouterLink } from "@angular/router";
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 @Component({
   selector: 'app-productlist',
-  imports: [RouterLink],
+  imports: [RouterLink,NzTableModule],
   templateUrl: './productlist.html',
   styleUrl: './productlist.css',
 })
