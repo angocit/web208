@@ -1,8 +1,26 @@
 <h1>Danh sách sản phẩm</h1>
-<ul>
-    @for (product of products; track product.id) {
-        <li>
-            {{product.name}} <button [routerLink]="['/admin/products/edit',product.id]">Sửa</button>
-        </li>
+<nz-table #productTable [nzData]="products">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên sản phẩm</th>
+      <th>Ảnh</th>
+      <th>Giá tiền</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (product of productTable.data; let i=$index; track product.id) {
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td><img [src]="product.image" width="90"/>
+            <td>{{product.price}}</td>
+            <td class="flex gap-2">
+                <button nz-button nzType="primary">Sửa</button>
+                <button nz-button nzType="primary" nzDanger>Xóa</button>
+            </td>
+        </tr>
     }
-</ul>
+  </tbody>
+</nz-table>
