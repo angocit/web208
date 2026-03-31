@@ -1,1 +1,34 @@
-<p>productadd works!</p>
+<h1>Thêm mới sản phẩm</h1>
+<!-- <form [formGroup]="productform">
+    <input type="text" placeholder="Tên" formControlName="name"/>
+    @if(!productform.controls.name.valid&&(productform.controls.name.dirty||productform.controls.name.touched)){
+        <p>Tên không để trống</p>
+    }
+    <input type="text" placeholder="Ảnh" formControlName="image"/>
+    <input type="text" placeholder="Giá" formControlName="price"/>
+    <button>Thêm mới</button>
+</form> -->
+<form nz-form [formGroup]="productform" class="login-form" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Tên không để trống">
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="name" placeholder="Tên sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="image" placeholder="Ảnh sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Giá phải >=1000">
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="price" placeholder="Giá sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <button [disabled]="!productform.valid" nz-button class="login-form-button login-form-margin" nzType="primary">Thêm mới</button>
+    </form>

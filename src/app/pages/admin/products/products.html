@@ -16,9 +16,11 @@
             <td>{{product.name}}</td>
             <td><img [src]="product.image" width="90"/>
             <td>{{product.price}}</td>
-            <td class="flex gap-2">
+            <td>
+                <div class="flex gap-2">
                 <button nz-button nzType="primary">Sửa</button>
                 <button nz-button nzType="primary" nzDanger>Xóa</button>
+                </div>
             </td>
         </tr>
     }
