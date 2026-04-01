@@ -1,1 +1,34 @@
-<p>productadd works!</p>
+<!-- <form [formGroup]="productform">
+    <input type="text" formControlName="name"/>
+    @if((!productform.controls.name.valid)&&(productform.controls.name.dirty||productform.controls.name.touched)){
+            <span>Tên không được để trống</span>
+    }
+    <input type="text" formControlName="image"/>
+    <input type="text" formControlName="price"/>
+    <button type="submit" [disabled]="!productform.valid">Thêm mới</button>
+</form> -->
+<!-- Sử dụng ant design  -->
+ <form nz-form [formGroup]="productform" class="login-form" (ngSubmit)="handleSubmit()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Tên không được để trống">
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="name" placeholder="Tên sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Ảnh không được để trống">
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="image" placeholder="Ảnh sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Giá không để trống và > 1000">
+          <nz-input-wrapper>
+            <input type="text" nz-input formControlName="price" placeholder="Giá sản phẩm" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="!productform.valid">Thêm mới</button>
+    </form>

@@ -22,7 +22,7 @@
       <td><img [src]="product.image" width="90"/></td>
       <td>{{product.price}}</td>
       <td>
-        Sửa | Xóa
+         <button [routerLink]="['/admin/products/edit',product.id]" nz-button nzType="primary">Sửa</button> | Xóa
       </td>
     </tr>
 }
