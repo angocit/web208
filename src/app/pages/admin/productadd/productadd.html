@@ -30,5 +30,14 @@
           </nz-input-wrapper>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="gender" nzRequired>Danh mục</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Please select your gender!">
+          <nz-select id="gender" formControlName="category" nzPlaceHolder="Chọn danh mục">
+            <nz-option nzValue="1" nzLabel="Quần áo" />
+            <nz-option nzValue="2" nzLabel="Giày dép" />
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
       <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="!productform.valid">Thêm mới</button>
     </form>

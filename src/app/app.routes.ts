@@ -7,13 +7,14 @@ import { Productlist } from './pages/admin/productlist/productlist';
 import { Productadd } from './pages/admin/productadd/productadd';
 import { Productedit } from './pages/admin/productedit/productedit';
 import { Productdetail } from './pages/admin/productdetail/productdetail';
+import { adminGuard } from './guard/admin-guard';
 
 export const routes: Routes = [
     {path:'',component:Client,children:[
         {path:'',component:Home},
         {path:'detail',component:Detail}
     ]},
-    {path:'admin',component:Admin, children:[
+    {path:'admin',component:Admin,canActivate:[adminGuard], children:[
         {path:'products',component:Productlist},
         {path:'products/add',component:Productadd},
         {path:'products/:id',component:Productdetail},

@@ -22,7 +22,12 @@
       <td><img [src]="product.image" width="90"/></td>
       <td>{{product.price}}</td>
       <td>
-         <button [routerLink]="['/admin/products/edit',product.id]" nz-button nzType="primary">Sửa</button> | Xóa
+         <button [routerLink]="['/admin/products/edit',product.id]" nz-button nzType="primary">Sửa</button>
+         <button nz-popconfirm
+      nzPopconfirmTitle="Bạn thực sự muốn xóa?"
+      nzOkText="Đồng ý"
+      nzCancelText="Hủy"
+      (nzOnConfirm)="handleDelete(product.id)" nz-button nzDanger nzType="primary">Xóa</button>
       </td>
     </tr>
 }
