@@ -12,10 +12,7 @@ export const adminGuard: CanActivateFn = (route, state) => {
     // console.log(now);
     // console.log(tkdecoded.sub);
     
-    if (tkdecoded.sub == '3'&&tkdecoded.exp&&tkdecoded.exp>now)
-      {
-        return true
-      }
+    if (tkdecoded.sub == '3'&&tkdecoded.exp&&tkdecoded.exp>now) return true
       router.navigate(['/'])
       return false   
   }
