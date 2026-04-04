@@ -1,0 +1,21 @@
+<form nz-form nzLayout="inline" [formGroup]="userform" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Email không đúng định dạng!">
+          <nz-input-wrapper>
+            <input formControlName="email" nz-input placeholder="Email" />
+          </nz-input-wrapper>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Mật khẩu từ 6 kí tự">
+          <nz-input-password>
+            <input formControlName="password" nz-input placeholder="Password" />
+          </nz-input-password>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary" [disabled]="!userform.valid">Login</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>

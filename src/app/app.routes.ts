@@ -7,14 +7,19 @@ import { Detail } from './pages/detail/detail';
 import { Products } from './pages/admin/products/products';
 import { Productadd } from './pages/admin/productadd/productadd';
 import { Productedit } from './pages/admin/productedit/productedit';
+import { adminGuard } from './guard/admin-guard';
+import { Register } from './pages/register/register';
+import { Login } from './pages/login/login';
 
 export const routes: Routes = [
     {path:'',component:Clientlayout,children:[
         {path:'',component:Homepage},
         {path:'category',component:Category},
-        {path:'detail',component:Detail}
+        {path:'detail',component:Detail},
+        {path:'register',component:Register},
+        {path:'login',component:Login}
     ]},
-    {path:'admin',component:Adminlayout,children:[
+    {path:'admin',component:Adminlayout,canActivate:[adminGuard],children:[
         {path:'products',component:Products},
         {path:'products/add',component:Productadd},
         {path:'products/edit/:id',component:Productedit}

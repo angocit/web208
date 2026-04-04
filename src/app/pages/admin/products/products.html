@@ -18,8 +18,14 @@
             <td>{{product.price}}</td>
             <td>
                 <div class="flex gap-2">
-                <button nz-button nzType="primary">Sửa</button>
-                <button nz-button nzType="primary" nzDanger>Xóa</button>
+                <button [routerLink]="['/admin/products/edit',product.id]" nz-button nzType="primary">Sửa</button>
+                <button
+                 nz-popconfirm
+                  nzPopconfirmTitle="Bạn thực sự muốn xóa?"
+                  (nzOnConfirm)="handleDelete(product.id)"
+                  nzOkText="Đồng ý"
+                  nzCancelText="Hủy"
+                nz-button nzType="primary" nzDanger>Xóa</button>
                 </div>
             </td>
         </tr>
