@@ -19,7 +19,7 @@ export const routes: Routes = [
         {path:'register',component:Register},
         {path:'login',component:Login}
     ]},
-    {path:'admin',component:Adminlayout,canActivate:[adminGuard],children:[
+    {path:'admin',component:Adminlayout,children:[
         {path:'products',component:Products},
         {path:'products/add',component:Productadd},
         {path:'products/edit/:id',component:Productedit}
