@@ -4,7 +4,7 @@
         <li [routerLink]="['/admin/products',product.id]">{{product.name}}</li>
     }
 </ul> -->
-<nz-table #productsTable [nzData]="products">
+<nz-table #productsTable [nzData]="products()">
   <thead>
     <tr>
       <th>STT</th>

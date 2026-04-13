@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { IProduct } from '../../../interfaces/product';
 import { RouterLink } from "@angular/router";
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -14,7 +14,7 @@ import { Product } from '../../../services/product';
   styleUrl: './productlist.css',
 })
 export class Productlist {
-  products:IProduct[] = []
+  products = signal<IProduct[]>([])
   cdr = inject(ChangeDetectorRef)
   http = inject(HttpClient)
   message = inject(NzMessageService)
@@ -26,8 +26,8 @@ export class Productlist {
       // Gọi service lấy danh sách sản phẩm
       this.productservice.getAll().subscribe({
         next:(data)=>{
-            this.products =data
-            this.cdr.markForCheck()
+            // this.products =data
+            this.products.set(data)
         }
       })
   }
@@ -48,8 +48,8 @@ export class Productlist {
       this.productservice.Delete(id).subscribe({
         next:()=>{
           this.message.success("Xóa thành công")
-          this.products = this.products.filter(item=>item.id!=id)
-          this.cdr.markForCheck()
+          // this.products = this.products.filter(item=>item.id!=id)
+          this.products.update(oldproducts=>oldproducts.filter(item=>item.id!=id))
         },
         error:()=>{
           this.message.error("Xóa thất bại")
