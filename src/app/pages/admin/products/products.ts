@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { IProduct } from '../../../interface/product';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -15,15 +15,16 @@ import { ProductService } from '../../../services/product';
 })
 export class Products {
   route = inject(ActivatedRoute)
-  products:IProduct[] = []
+  products = signal<IProduct[]>([])
   changdt = inject(ChangeDetectorRef)
   // http = inject(HttpClient)
   productservice = inject(ProductService)
   ngOnInit(){
     this.productservice.getAll().subscribe({
       next: (data)=>{
-        this.products = data
-        this.changdt.markForCheck()
+        // this.products = data
+        this.products.set(data)
+        // this.changdt.markForCheck()
       },
       error:(err)=>{
           console.log(err);          
@@ -35,8 +36,9 @@ export class Products {
     this.productservice.Delete(id).subscribe({
       next: ()=>{
         this.message.success("Xóa thành công")
-        this.products = this.products.filter(item=>item.id!=id)
-         this.changdt.markForCheck()
+        // this.products = this.products.filter(item=>item.id!=id)
+        //  this.changdt.markForCheck()
+        this.products.update((oldproduct)=>oldproduct.filter(item=>item.id!=id))
       },
       error:()=>{
         this.message.error("Xóa thất bại")
